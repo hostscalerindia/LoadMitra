@@ -61,7 +61,7 @@ const About = () => {
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-heading font-bold text-white mb-6 leading-tight">
-            Revolutionizing Logistics
+            Revolutionizing Logistic
           </h1>
           <p className="text-para text-white max-w-3xl mx-auto leading-relaxed">
             India's most trusted platform connecting shippers with verified transporters

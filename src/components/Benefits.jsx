@@ -1,4 +1,4 @@
-import { img1 } from '../assets'
+import { track2image } from '../assets'
 
 const Benefits = () => {
   return (
@@ -20,8 +20,8 @@ const Benefits = () => {
           {/* Left Column - Just the Image */}
           <div>
             <img 
-              src={img1} 
-              alt="Woman with mobile app" 
+              src={track2image} 
+              alt="Track and mobile app interface" 
               className="w-full max-w-lg h-auto object-cover rounded-lg"
             />
           </div>

@@ -1,4 +1,4 @@
-import { img3 } from '../assets'
+import { truckimagemain } from '../assets'
 
 const Automation = () => {
   return (
@@ -10,8 +10,8 @@ const Automation = () => {
           {/* Left Column - Just the Image */}
           <div>
             <img
-              src={img3}
-              alt="Automation interface"
+              src={truckimagemain}
+              alt="Truck automation interface"
               className="w-full max-w-lg h-auto object-cover rounded-lg"
             />
           </div>

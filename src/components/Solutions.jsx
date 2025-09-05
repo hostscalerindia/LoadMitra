@@ -1,3 +1,5 @@
+import { ico1, ico2, ico3 } from '../assets'
+
 const Solutions = () => {
   return (
     <div className="relative py-24 bg-lightblue overflow-hidden">
@@ -38,15 +40,12 @@ const Solutions = () => {
           <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
             <div className="text-center">
               {/* Icon */}
-              <div className="w-20 h-20 mx-auto mb-6 flex items-center justify-center">
-                <svg className="w-full h-full" viewBox="0 0 80 80" fill="none">
-                  {/* Location Pins */}
-                  <circle cx="20" cy="20" r="6" fill="#3B82F6"/>
-                  <circle cx="50" cy="35" r="6" fill="#3B82F6"/>
-                  <circle cx="60" cy="60" r="6" fill="#3B82F6"/>
-                  {/* Dotted Path */}
-                  <path d="M20,20 L50,35 L60,60" stroke="#9CA3AF" strokeWidth="2" strokeDasharray="4,4" fill="none"/>
-                </svg>
+              <div className="w-24 h-24 mx-auto mb-6 flex items-center justify-center">
+                <img 
+                  src={ico1} 
+                  alt="Fixed-Route Transport Icon" 
+                  className="w-full h-full object-contain"
+                />
               </div>
               
               {/* Title */}
@@ -73,19 +72,12 @@ const Solutions = () => {
           <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
             <div className="text-center">
               {/* Icon */}
-              <div className="w-20 h-20 mx-auto mb-6 flex items-center justify-center">
-                <svg className="w-full h-full" viewBox="0 0 80 80" fill="none">
-                  {/* Smartphone */}
-                  <rect x="25" y="15" width="30" height="50" rx="5" fill="#9CA3AF" stroke="#6B7280" strokeWidth="2"/>
-                  {/* Screen */}
-                  <rect x="27" y="17" width="26" height="46" rx="3" fill="#E0F2FE"/>
-                  {/* Map Pin */}
-                  <circle cx="40" cy="35" r="8" fill="#F97316"/>
-                  <path d="M40,43 L40,50 L36,46 L44,46 Z" fill="#F97316"/>
-                  {/* Plus Icon */}
-                  <circle cx="55" cy="25" r="4" fill="#F97316"/>
-                  <path d="M55,23 L55,27 M53,25 L57,25" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
-                </svg>
+              <div className="w-24 h-24 mx-auto mb-6 flex items-center justify-center">
+                <img 
+                  src={ico2} 
+                  alt="On-Demand Transport Icon" 
+                  className="w-full h-full object-contain"
+                />
               </div>
               
               {/* Title */}
@@ -112,21 +104,12 @@ const Solutions = () => {
           <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
             <div className="text-center">
               {/* Icon */}
-              <div className="w-20 h-20 mx-auto mb-6 flex items-center justify-center">
-                <svg className="w-full h-full" viewBox="0 0 80 80" fill="none">
-                  {/* Bus/Shuttle */}
-                  <rect x="15" y="35" width="50" height="25" rx="3" fill="#9CA3AF" stroke="#6B7280" strokeWidth="2"/>
-                  {/* Windows */}
-                  <rect x="20" y="38" width="8" height="8" rx="1" fill="#E0F2FE"/>
-                  <rect x="32" y="38" width="8" height="8" rx="1" fill="#E0F2FE"/>
-                  <rect x="44" y="38" width="8" height="8" rx="1" fill="#E0F2FE"/>
-                  {/* Wheels */}
-                  <circle cx="25" cy="60" r="4" fill="#374151"/>
-                  <circle cx="55" cy="60" r="4" fill="#374151"/>
-                  {/* Cloud/Alert Icon */}
-                  <circle cx="40" cy="20" r="8" fill="#F97316"/>
-                  <path d="M40,16 L40,24 M36,20 L44,20" stroke="white" strokeWidth="2" strokeLinecap="round"/>
-                </svg>
+              <div className="w-24 h-24 mx-auto mb-6 flex items-center justify-center">
+                <img 
+                  src={ico3} 
+                  alt="Fleet Management Icon" 
+                  className="w-full h-full object-contain"
+                />
               </div>
               
               {/* Title */}

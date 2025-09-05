@@ -1,18 +1,19 @@
 import { useState, useEffect, useRef } from 'react'
+import { vector1, vector2, vector3, vector4, dotline } from '../assets'
 
 const Industries = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const carouselRef = useRef(null)
   
   const industries = [
-    { name: "CAMPUS", image: "/src/assets/images/vector1.jpg" },
-    { name: "RESIDENTIAL", image: "/src/assets/images/vector2.jpg" },
-    { name: "SENIOR LIVING", image: "/src/assets/images/vector3.jpg" },
-    { name: "HOTEL", image: "/src/assets/images/vector4.jpg" },
-    { name: "RESORT", image: "/src/assets/images/vector1.jpg" },
-    { name: "AMUSEMENT PARK", image: "/src/assets/images/vector2.jpg" },
-    { name: "CORPORATE", image: "/src/assets/images/vector3.jpg" },
-    { name: "HEALTHCARE", image: "/src/assets/images/vector4.jpg" }
+    { name: "CAMPUS", image: vector1 },
+    { name: "RESIDENTIAL", image: vector2 },
+    { name: "SENIOR LIVING", image: vector3 },
+    { name: "HOTEL", image: vector4 },
+    { name: "RESORT", image: vector1 },
+    { name: "AMUSEMENT PARK", image: vector2 },
+    { name: "CORPORATE", image: vector3 },
+    { name: "HEALTHCARE", image: vector4 }
   ]
 
   // Handle scroll events to update current index
@@ -65,7 +66,7 @@ const Industries = () => {
       {/* Background Dot Pattern */}
       <div className="absolute inset-0">
         <img
-          src="/src/assets/images/dotline.svg"
+          src={dotline}
           alt="Dot pattern background"
           className="w-full h-full object-cover opacity-30"
         />

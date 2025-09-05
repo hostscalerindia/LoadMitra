@@ -1,3 +1,5 @@
+import { img1 } from '../assets'
+
 const Benefits = () => {
   return (
     <div className="py-24 bg-white">
@@ -18,7 +20,7 @@ const Benefits = () => {
           {/* Left Column - Just the Image */}
           <div>
             <img 
-              src="/src/assets/images/img1.png" 
+              src={img1} 
               alt="Woman with mobile app" 
               className="w-full max-w-lg h-auto object-cover rounded-lg"
             />

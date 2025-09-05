@@ -1,3 +1,5 @@
+import { img2 } from '../assets'
+
 const Operations = () => {
   return (
     <div className="py-24 bg-white">
@@ -53,7 +55,7 @@ const Operations = () => {
           {/* Right Column - Just the Image */}
           <div className="flex justify-end">
             <img 
-              src="/src/assets/images/img2.png" 
+              src={img2} 
               alt="Operations monitoring" 
               className="w-full max-w-md h-auto object-cover rounded-lg"
             />

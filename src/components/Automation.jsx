@@ -1,3 +1,5 @@
+import { img3 } from '../assets'
+
 const Automation = () => {
   return (
     <div className="py-24 bg-lightblue">
@@ -8,7 +10,7 @@ const Automation = () => {
           {/* Left Column - Just the Image */}
           <div>
             <img
-              src="/src/assets/images/img3.png"
+              src={img3}
               alt="Automation interface"
               className="w-full max-w-lg h-auto object-cover rounded-lg"
             />

@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { logoimage } from '../assets'
 
 const Navbar = () => {
   const [activeDropdown, setActiveDropdown] = useState(null)
@@ -102,7 +103,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <Link to="/" className="flex items-center group cursor-pointer" onClick={closeMobileMenu}>
               <img 
-                src="/src/assets/images/logoimage.png" 
+                src={logoimage} 
                 alt="LoadMitra Logo" 
                 className="h-[160px] w-[160px] transition-transform duration-300 group-hover:scale-110 drop-shadow-lg"
               />

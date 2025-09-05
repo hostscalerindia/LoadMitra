@@ -1,3 +1,5 @@
+import { img4 } from '../assets'
+
 const Business = () => {
   return (
     <div className="py-24 bg-white">
@@ -85,7 +87,7 @@ const Business = () => {
             {/* Handshake Image */}
             <div className="relative z-10 flex justify-end">
               <img
-                src="/src/assets/images/img4.png"
+                src={img4}
                 alt="Business handshake agreement"
                 className="w-full max-w-md h-auto object-cover rounded-lg"
               />

@@ -1,12 +1,33 @@
-// Image exports - Add your images here
-// Example:
-// export { default as logo } from './logo.png'
-// export { default as heroImage } from './hero-image.jpg'
-// export { default as shuttleIcon } from './shuttle-icon.svg'
-
-// You can also export images as objects for different sizes
-// export const logoVariants = {
-//   small: '/src/assets/images/logo-small.png',
-//   medium: '/src/assets/images/logo-medium.png',
-//   large: '/src/assets/images/logo-large.png'
-// }
+// Image and video exports
+export { default as logoimage } from './logoimage.png'
+export { default as bannerMain } from './banner-main.mp4'
+export { default as img1 } from './img1.png'
+export { default as img2 } from './img2.png'
+export { default as img3 } from './img3.png'
+export { default as img4 } from './img4.png'
+export { default as vector1 } from './vector1.jpg'
+export { default as vector2 } from './vector2.jpg'
+export { default as vector3 } from './vector3.jpg'
+export { default as vector4 } from './vector4.jpg'
+export { default as dotline } from './dotline.svg'
+export { default as aiTrack } from './ai-track.mp4'
+export { default as indianTruckVideo } from './indian-truck-video.mp4'
+export { default as newImageTruck } from './new-image truck.png'
+export { default as truck } from './truck.png'
+export { default as truck2 } from './truck-2.webp'
+export { default as truckRoad } from './truck-road-bhutan-34669989.webp'
+export { default as truckJpeg } from './truck.jpeg'
+export { default as fleetManagement } from './fleet-management.svg'
+export { default as frTransport } from './FR-transport.svg'
+export { default as odTransport } from './OD-transport.svg'
+export { default as freeDemoBg } from './free-demobg.png'
+export { default as bgremove1 } from './bgremove-1.png'
+export { default as shape } from './shape.svg'
+export { default as freepik57679 } from './freepik__the-style-is-candid-image-photography-with-natural__57679.png'
+export { default as freepik57680 } from './freepik__the-style-is-candid-image-photography-with-natural__57680.png'
+export { default as freepik57681 } from './freepik__the-style-is-candid-image-photography-with-natural__57681.png'
+export { default as freepik57682 } from './freepik__the-style-is-candid-image-photography-with-natural__57682.png'
+export { default as img3Jpg } from './img3.jpg'
+export { default as indianTruckGif } from './indian-truck-video.gif'
+export { default as screencapture } from './screencapture-trucksuvidha-Directory-aspx-2025-09-02-23_14_19.png'
+export { default as whatsappImage } from './WhatsApp Image 2025-09-01 at 10.41.35 PM.jpeg'

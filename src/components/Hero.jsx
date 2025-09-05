@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { bannerMain } from '../assets'
 
 const Hero = () => {
   const [isPlaying, setIsPlaying] = useState(true)
@@ -16,7 +17,7 @@ const Hero = () => {
           onPlay={() => setIsPlaying(true)}
           onPause={() => setIsPlaying(false)}
         >
-          <source src="/src/assets/images/banner-main.mp4" type="video/mp4" />
+          <source src={bannerMain} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         

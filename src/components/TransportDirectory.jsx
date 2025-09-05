@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Search, Filter, MapPin, Star, CheckCircle, Phone, MessageSquare, Eye, Truck, Users, Shield, Clock } from 'lucide-react'
 
 const TransportDirectory = () => {
   const [selectedCategory, setSelectedCategory] = useState('transporter')
@@ -8,16 +9,16 @@ const TransportDirectory = () => {
   const [showFilters, setShowFilters] = useState(false)
 
   const categories = [
-    { id: 'transporter', name: 'Transporter', count: 21551 },
-    { id: 'packers-movers', name: 'Packers And Movers', count: 799 }
+    { id: 'transporter', name: 'Transporter', count: 21551, icon: Truck, color: 'bg-blue-500' },
+    { id: 'packers-movers', name: 'Packers & Movers', count: 799, icon: Users, color: 'bg-green-500' }
   ]
 
   const transporterTypes = [
-    { id: 'fleet-owner', name: 'Fleet Owner', count: 12868 },
-    { id: 'transport-contractor', name: 'Transport Contractor', count: 8859 },
-    { id: 'commission-agent', name: 'Commission Agent', count: 7974 },
-    { id: 'transport-broker', name: 'Transport Broker', count: 1066 },
-    { id: 'logistics', name: 'Logistics Transporters', count: 273 }
+    { id: 'fleet-owner', name: 'Fleet Owner', count: 12868, icon: Truck, color: 'bg-blue-500' },
+    { id: 'transport-contractor', name: 'Transport Contractor', count: 8859, icon: Shield, color: 'bg-purple-500' },
+    { id: 'commission-agent', name: 'Commission Agent', count: 7974, icon: Users, color: 'bg-green-500' },
+    { id: 'transport-broker', name: 'Transport Broker', count: 1066, icon: Clock, color: 'bg-orange-500' },
+    { id: 'logistics', name: 'Logistics Transporters', count: 273, icon: Truck, color: 'bg-indigo-500' }
   ]
 
   const transporters = [
@@ -29,6 +30,9 @@ const TransportDirectory = () => {
       address: 'Mumbai, Maharashtra, India - 400001',
       rating: 4.5,
       verified: true,
+      experience: '8+ years',
+      fleetSize: '25+ trucks',
+      speciality: 'Heavy Machinery',
       image: '/placeholder-avatar.png'
     },
     {
@@ -39,6 +43,9 @@ const TransportDirectory = () => {
       address: 'Delhi, Delhi, India - 110001',
       rating: 4.8,
       verified: true,
+      experience: '12+ years',
+      fleetSize: '50+ trucks',
+      speciality: 'E-commerce & Retail',
       image: '/placeholder-logo.png'
     },
     {
@@ -49,6 +56,9 @@ const TransportDirectory = () => {
       address: 'Pune, Maharashtra, India - 411001',
       rating: 4.2,
       verified: true,
+      experience: '6+ years',
+      fleetSize: '15+ trucks',
+      speciality: 'Steel & Construction',
       image: '/placeholder-company.png'
     },
     {
@@ -59,6 +69,9 @@ const TransportDirectory = () => {
       address: 'Chandigarh, Punjab, India - 160001',
       rating: 4.6,
       verified: true,
+      experience: '10+ years',
+      fleetSize: '30+ trucks',
+      speciality: 'Agricultural Products',
       image: '/placeholder-avatar.png'
     }
   ]
@@ -78,338 +91,326 @@ const TransportDirectory = () => {
   }
 
   return (
-    <div className="space-y-6">
-      {/* Mobile Filter Toggle Button */}
+    <div className="min-h-screen bg-gradient-to-br from-lightblue/5 via-white to-darkblue/5">
+      {/* Header Section */}
+      <div className="bg-white border-b border-gray-100 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-4 lg:space-y-0">
+            {/* Title and Stats */}
+            <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-8">
+              <h1 className="text-2xl font-bold text-darkblue">Transport Directory</h1>
+              <div className="flex items-center space-x-6 text-sm text-gray-600">
+                <div className="flex items-center space-x-2">
+                  <Users className="w-4 h-4 text-lightblue" />
+                  <span>{transporters.length} Results</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Shield className="w-4 h-4 text-green-500" />
+                  <span>All Verified</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Mobile Filter Toggle */}
       <div className="lg:hidden">
         <button
           onClick={() => setShowFilters(!showFilters)}
-          className="w-full flex items-center justify-between px-6 py-4 bg-white rounded-2xl shadow-lg border border-gray-200"
-        >
-          <div className="flex items-center space-x-3">
-            <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
-            </svg>
-            <span className="text-lg font-semibold text-gray-800">Filters & Search</span>
-          </div>
-          <svg 
-            className={`w-5 h-5 text-gray-500 transition-transform duration-300 ${showFilters ? 'rotate-180' : ''}`} 
-            fill="none" 
-            stroke="currentColor" 
-            viewBox="0 0 24 24"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-          </svg>
+                className="flex items-center space-x-2 px-4 py-2 bg-lightblue text-white rounded-lg hover:bg-darkblue transition-colors duration-300"
+              >
+                <Filter className="w-4 h-4" />
+                <span>Filters</span>
         </button>
+            </div>
+          </div>
+        </div>
       </div>
 
-      {/* Mobile Filters Panel */}
-      <div className={`lg:hidden transition-all duration-300 overflow-hidden ${
-        showFilters ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
-      }`}>
-        <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-200">
-          {/* Quick Search */}
-          <div className="mb-6">
-            <h3 className="text-lg font-semibold text-gray-800 mb-3">Quick Search</h3>
-            <div className="flex">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="flex flex-col lg:flex-row space-y-8 lg:space-y-0 lg:space-x-8">
+          
+          {/* Left Sidebar - Filters */}
+          <div className={`lg:w-80 ${showFilters ? 'block' : 'hidden lg:block'}`}>
+            <div className="sticky top-24">
+              <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+                {/* Filter Header */}
+                <div className="bg-lightblue text-white px-6 py-4">
+                  <h3 className="text-lg font-bold text-white flex items-center space-x-2">
+                    <Filter className="w-5 h-5" />
+                    <span>Smart Filters</span>
+                  </h3>
+      </div>
+
+                <div className="p-6 space-y-6">
+                  {/* Search Bar */}
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-3">Quick Search</label>
+                    <div className="relative">
+                      <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
               <input
                 type="text"
-                placeholder="Eg. Company Name"
+                        placeholder="Company name, location..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="flex-1 px-4 py-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-lightblue focus:border-transparent transition-all duration-300"
               />
-              <button className="px-4 py-2 bg-blue-600 text-white rounded-r-lg hover:bg-blue-700 transition-colors">
-                Go
-              </button>
             </div>
           </div>
 
           {/* Category Selection */}
-          <div className="mb-6">
-            <h3 className="text-lg font-semibold text-gray-800 mb-3">Select Category</h3>
-            <div className="space-y-2">
-              {categories.map((category) => (
-                <label key={category.id} className="flex items-center cursor-pointer">
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-3">Category</label>
+                    <div className="space-y-3">
+                      {categories.map((category) => {
+                        const IconComponent = category.icon
+                        return (
+                          <label key={category.id} className="flex items-center space-x-3 cursor-pointer group">
                   <input
                     type="radio"
                     name="category"
                     value={category.id}
                     checked={selectedCategory === category.id}
                     onChange={(e) => setSelectedCategory(e.target.value)}
-                    className="mr-3 text-blue-600 focus:ring-blue-500"
-                  />
-                  <span className="text-gray-700">{category.name}</span>
-                  <span className="ml-auto text-sm text-gray-500">({category.count})</span>
+                              className="w-4 h-4 text-lightblue focus:ring-lightblue border-gray-300"
+                            />
+                            <div className={`w-8 h-8 ${category.color} rounded-lg flex items-center justify-center`}>
+                              <IconComponent className="w-4 h-4 text-white" />
+                            </div>
+                            <div className="flex-1">
+                              <span className="text-gray-700 group-hover:text-darkblue transition-colors font-medium">
+                                {category.name}
+                              </span>
+                              <div className="text-xs text-gray-500">{category.count.toLocaleString()}+</div>
+                            </div>
                 </label>
-              ))}
+                        )
+                      })}
             </div>
           </div>
 
           {/* Transporter Types */}
-          <div className="mb-6">
-            <h3 className="text-lg font-semibold text-gray-800 mb-3">Transporter Type</h3>
-            <div className="space-y-2">
-              {transporterTypes.map((type) => (
-                <label key={type.id} className="flex items-center cursor-pointer">
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-3">Transporter Type</label>
+                    <div className="space-y-3">
+                      {transporterTypes.map((type) => {
+                        const IconComponent = type.icon
+                        return (
+                          <label key={type.id} className="flex items-center space-x-3 cursor-pointer group">
                   <input
                     type="checkbox"
                     checked={selectedTypes.includes(type.id)}
                     onChange={() => handleTypeToggle(type.id)}
-                    className="mr-3 text-blue-600 focus:ring-blue-500 rounded"
+                              className="w-4 h-4 text-lightblue focus:ring-lightblue border-gray-300 rounded"
+                            />
+                            <div className={`w-8 h-8 ${type.color} rounded-lg flex items-center justify-center`}>
+                              <IconComponent className="w-4 h-4 text-white" />
+            </div>
+                            <div className="flex-1">
+                              <span className="text-gray-700 group-hover:text-darkblue transition-colors font-medium">
+                                {type.name}
+                              </span>
+                              <div className="text-xs text-gray-500">{type.count.toLocaleString()}+</div>
+          </div>
+                          </label>
+                        )
+                      })}
+            </div>
+          </div>
+
+                  {/* Location Search */}
+                <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-3">Location</label>
+                    <div className="space-y-3">
+                      <div className="relative">
+                        <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+                  <input
+                    type="text"
+                          placeholder="City, State, or PIN"
+                          className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-lightblue focus:border-transparent transition-all duration-300"
                   />
-                  <span className="text-gray-700">{type.name}</span>
-                  <span className="ml-auto text-sm text-gray-500">({type.count})</span>
-                </label>
-              ))}
-            </div>
-          </div>
+                </div>
+                  </div>
+                </div>
 
-          {/* Search by Area */}
-          <div className="mb-6">
-            <h3 className="text-lg font-semibold text-gray-800 mb-3">Search by Area</h3>
-            <div className="space-y-3">
-              <div>
-                <input
-                  type="text"
-                  placeholder="Search By Pin Code"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                />
-              </div>
-              <div>
-                <select className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                  <option>Search By State</option>
-                  <option>Maharashtra</option>
-                  <option>Delhi</option>
-                  <option>Punjab</option>
-                </select>
-              </div>
-              <div>
-                <select className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                  <option>Search By District</option>
-                  <option>Mumbai</option>
-                  <option>New Delhi</option>
-                  <option>Chandigarh</option>
-                </select>
-              </div>
-              <div>
-                <select className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                  <option>Search By City</option>
-                  <option>Mumbai</option>
-                  <option>Delhi</option>
-                  <option>Pune</option>
-                </select>
-              </div>
-            </div>
-          </div>
+                {/* Rating Filter */}
+                <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-3">Minimum Rating</label>
+                    <div className="space-y-2">
+                    {[4.5, 4.0, 3.5, 3.0].map((rating) => (
+                      <label key={rating} className="flex items-center space-x-3 cursor-pointer group">
+                          <input
+                            type="radio"
+                            name="rating"
+                            value={rating}
+                            className="w-4 h-4 text-yellow-500 focus:ring-yellow-500 border-gray-300"
+                          />
+                          <div className="flex items-center space-x-2">
+                            <div className="flex space-x-1">
+                              {[...Array(5)].map((_, i) => (
+                                <Star
+                                  key={i}
+                                  className={`w-4 h-4 ${
+                                    i < Math.floor(rating) ? 'text-yellow-400 fill-current' : 'text-gray-300'
+                                  }`}
+                                />
+                              ))}
+                            </div>
+                            <span className="text-sm text-gray-600 group-hover:text-darkblue transition-colors">
+                              {rating}+
+                            </span>
+                          </div>
+                      </label>
+                    ))}
+                  </div>
+                </div>
 
-          {/* Clear Filters */}
-          <button
-            onClick={clearFilters}
-            className="w-full py-3 px-4 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors font-medium"
-          >
-            Clear Filters
-          </button>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-        {/* Desktop Left Sidebar - Filters */}
-        <div className={`lg:w-80 lg:block ${showFilters ? 'block' : 'hidden'}`}>
-          <div className="sticky top-24 max-h-[calc(100vh-6rem)] overflow-y-auto custom-scrollbar pr-4 space-y-8">
-            {/* Quick Search */}
-            <div className="bg-white rounded-2xl p-8">
-              <h3 className="text-lg font-bold text-[#021445] mb-6 flex items-center">
-                <svg className="w-5 h-5 mr-2 text-[#4fa7ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-                Quick Search
-              </h3>
-              <input
-                type="text"
-                placeholder="Search transporters..."
-                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#4fa7ff] focus:border-transparent"
-              />
-            </div>
-
-            {/* Category Filter */}
-            <div className="bg-white rounded-2xl p-8">
-              <h3 className="text-lg font-bold text-[#021445] mb-6 flex items-center">
-                <svg className="w-5 h-5 mr-2 text-[#f54eb8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                </svg>
-                Category
-              </h3>
-              <div className="space-y-4">
-                {['Transport', 'Logistics', 'Warehousing', 'Packers & Movers'].map((category) => (
-                  <label key={category} className="flex items-center space-x-3 cursor-pointer group">
-                    <input type="checkbox" className="w-4 h-4 text-[#4fa7ff] border-gray-300 rounded focus:ring-[#4fa7ff]" />
-                    <span className="text-gray-700 group-hover:text-[#4fa7ff] transition-colors">{category}</span>
-                  </label>
-                ))}
+                  {/* Action Buttons */}
+                  <div className="space-y-3 pt-4">
+                    <button className="w-full bg-gradient-to-r from-lightblue to-darkblue text-white font-semibold py-3 px-6 rounded-xl hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                  Apply Filters
+                </button>
+                    <button
+                      onClick={clearFilters}
+                      className="w-full py-3 px-6 bg-gray-100 text-gray-700 rounded-xl hover:bg-gray-200 transition-colors font-medium"
+                    >
+                      Clear All
+                    </button>
+                  </div>
               </div>
             </div>
-
-            {/* Transporter Type Filter */}
-            <div className="bg-white rounded-2xl p-8">
-              <h3 className="text-lg font-bold text-[#021445] mb-6 flex items-center">
-                <svg className="w-5 h-5 mr-2 text-[#9dd15a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2h-1V4H4v2H3V4z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 6h1v8a1 1 0 001 1h10a1 1 0 001-1V6h1v8a3 3 0 01-3 3H6a3 3 0 01-3-3V6z" />
-                </svg>
-                Vehicle Type
-              </h3>
-              <div className="space-y-4">
-                {['Open Truck', 'Closed Truck', 'Container', 'Trailer', 'Mini Truck'].map((type) => (
-                  <label key={type} className="flex items-center space-x-3 cursor-pointer group">
-                    <input type="checkbox" className="w-4 h-4 text-[#9dd15a] border-gray-300 rounded focus:ring-[#9dd15a]" />
-                    <span className="text-gray-700 group-hover:text-[#9dd15a] transition-colors">{type}</span>
-                  </label>
-                ))}
-              </div>
-            </div>
-
-            {/* Search by Area Filter */}
-            <div className="bg-white rounded-2xl p-8">
-              <h3 className="text-lg font-bold text-[#021445] mb-6 flex items-center">
-                <svg className="w-5 h-5 mr-2 text-[#f54eb8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-                Search by Area
-              </h3>
-              <input
-                type="text"
-                placeholder="Enter city or area..."
-                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#f54eb8] focus:border-transparent"
-              />
-            </div>
-
-            {/* Rating Filter */}
-            <div className="bg-white rounded-2xl p-8">
-              <h3 className="text-lg font-bold text-[#021445] mb-6 flex items-center">
-                <svg className="w-5 h-5 mr-2 text-[#4fa7ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-                </svg>
-                Minimum Rating
-              </h3>
-              <div className="space-y-4">
-                {[4.5, 4.0, 3.5, 3.0].map((rating) => (
-                  <label key={rating} className="flex items-center space-x-3 cursor-pointer group">
-                    <input type="radio" name="rating" value={rating} className="w-4 h-4 text-[#4fa7ff] border-gray-300 focus:ring-[#4fa7ff]" />
-                    <span className="text-gray-700 group-hover:text-[#4fa7ff] transition-colors">{rating}+ Stars</span>
-                  </label>
-                ))}
-              </div>
-            </div>
-
-            {/* Apply Filters Button */}
-            <button className="w-full bg-gradient-to-r from-[#4fa7ff] to-[#f54eb8] text-white font-bold py-4 px-6 rounded-xl hover:shadow-lg transition-all duration-300 transform hover:scale-105">
-              Apply Filters
-            </button>
           </div>
         </div>
 
         {/* Right Content - Results */}
-        <div className="lg:col-span-3">
+          <div className="flex-1">
           {/* Result Tabs */}
-          <div className="bg-white rounded-2xl shadow-lg p-6 mb-6">
+          <div className="bg-white rounded-2xl shadow-lg p-6 mb-6 border border-gray-100">
             <div className="flex space-x-1 bg-gray-100 p-1 rounded-lg">
               <button
                 onClick={() => setActiveTab('top-result')}
-                className={`flex-1 py-2 px-4 rounded-md text-sm font-medium transition-all ${
+                className={`flex-1 py-3 px-4 rounded-md text-sm font-medium transition-all ${
                   activeTab === 'top-result'
-                    ? 'bg-blue-600 text-white shadow-sm'
+                      ? 'bg-lightblue text-white shadow-sm'
                     : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
-                Top Result
+                  Top Results
               </button>
               <button
                 onClick={() => setActiveTab('user-rating')}
-                className={`flex-1 py-2 px-4 rounded-md text-sm font-medium transition-all ${
+                className={`flex-1 py-3 px-4 rounded-md text-sm font-medium transition-all ${
                   activeTab === 'user-rating'
-                    ? 'bg-blue-600 text-white shadow-sm'
+                      ? 'bg-lightblue text-white shadow-sm'
                     : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
-                User Rating
+                  Highest Rated
               </button>
             </div>
           </div>
 
-          {/* Transporter Listings - Scrollable Container */}
-          <div className="max-h-[calc(100vh-12rem)] overflow-y-auto pr-2 space-y-4">
+            {/* Transporter Listings */}
+            <div className="space-y-6">
             {transporters.map((transporter) => (
-              <div key={transporter.id} className="bg-white rounded-2xl shadow-lg p-4 lg:p-6 hover:shadow-xl transition-all duration-300">
-                <div className="flex flex-col lg:flex-row lg:items-start space-y-4 lg:space-y-0 lg:space-x-4">
-                  {/* Profile Image */}
+                <div key={transporter.id} className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden group">
+                  <div className="p-6">
+                    {/* Header Section */}
+                <div className="flex flex-col lg:flex-row lg:items-start space-y-4 lg:space-y-0 lg:space-x-6">
+                      {/* Profile Section */}
                   <div className="flex-shrink-0 flex justify-center lg:justify-start">
-                    <div className="w-20 h-20 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl flex items-center justify-center">
-                      <div className="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center">
-                        <span className="text-white text-xl font-bold">
+                        <div className="relative">
+                          <div className="w-20 h-20 bg-gradient-to-br from-lightblue to-darkblue rounded-2xl flex items-center justify-center shadow-lg">
+                            <span className="text-white text-2xl font-bold">
                           {transporter.name.charAt(0)}
                         </span>
                       </div>
+                          {transporter.verified && (
+                            <div className="absolute -top-2 -right-2 bg-green-500 rounded-full p-1">
+                              <CheckCircle className="w-4 h-4 text-white" />
+                            </div>
+                          )}
                     </div>
                   </div>
 
-                  {/* Content */}
+                      {/* Content Section */}
                   <div className="flex-1 min-w-0 text-center lg:text-left">
                     <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between space-y-4 lg:space-y-0">
                       <div className="flex-1">
-                        <h3 className="text-xl font-bold text-gray-900 mb-1">{transporter.name}</h3>
-                        <p className="text-gray-600 mb-2">{transporter.company}</p>
-                        <div className="flex items-center justify-center lg:justify-start text-sm text-gray-500 mb-2">
-                          <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-                          </svg>
-                          {transporter.contactPerson}
+                            <h3 className="text-xl font-bold text-darkblue mb-2 group-hover:text-lightblue transition-colors">
+                              {transporter.name}
+                            </h3>
+                            <p className="text-lg text-gray-700 mb-3 font-medium">{transporter.company}</p>
+                            
+                            {/* Company Details */}
+                            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 text-sm text-gray-600 mb-4">
+                              <div className="flex items-center space-x-2">
+                                <Users className="w-4 h-4 text-lightblue" />
+                                <span>{transporter.contactPerson}</span>
+                              </div>
+                              <div className="flex items-center space-x-2">
+                                <Truck className="w-4 h-4 text-green-500" />
+                                <span>{transporter.fleetSize}</span>
+                              </div>
+                              <div className="flex items-center space-x-2">
+                                <Clock className="w-4 h-4 text-orange-500" />
+                                <span>{transporter.experience}</span>
+                              </div>
+                            </div>
+
+                            {/* Speciality */}
+                            <div className="inline-block bg-lightblue/10 text-lightblue px-3 py-1 rounded-full text-sm font-medium mb-3">
+                              {transporter.speciality}
+                            </div>
+
+                            <div className="flex items-center justify-center lg:justify-start space-x-2 text-sm text-gray-500 mb-3">
+                              <MapPin className="w-4 h-4 text-gray-400" />
+                              <span>{transporter.address}</span>
                         </div>
-                        <p className="text-gray-600 text-sm">{transporter.address}</p>
                       </div>
 
-                      {/* Rating and Verification */}
-                      <div className="flex flex-col items-center lg:items-end space-y-2">
+                          {/* Rating and Actions */}
+                          <div className="flex flex-col items-center lg:items-end space-y-4">
+                            {/* Rating */}
                         <div className="flex items-center space-x-1">
                           {[...Array(5)].map((_, i) => (
-                            <svg
+                                <Star
                               key={i}
                               className={`w-5 h-5 ${
                                 i < Math.floor(transporter.rating)
                                   ? 'text-yellow-400 fill-current'
                                   : 'text-gray-300'
                               }`}
-                              viewBox="0 0 20 20"
-                            >
-                              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                            </svg>
+                                />
                           ))}
-                          <span className="text-sm text-gray-600 ml-1">{transporter.rating}</span>
+                              <span className="text-sm text-gray-600 ml-2 font-semibold">
+                                {transporter.rating}
+                              </span>
                         </div>
                         
+                            {/* Verification Badge */}
                         {transporter.verified && (
-                          <div className="flex items-center space-x-1 text-green-600">
-                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                            </svg>
-                            <span className="text-xs font-medium">Verified</span>
+                          <div className="flex items-center space-x-2 text-green-600 bg-green-50 px-3 py-1 rounded-full">
+                                <CheckCircle className="w-4 h-4" />
+                                <span className="text-xs font-medium">Verified Partner</span>
                           </div>
                         )}
                       </div>
                     </div>
 
                     {/* Action Buttons */}
-                    <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-3 sm:space-y-0 sm:space-x-3 mt-6">
-                      <button className="w-full sm:w-auto px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-sm font-medium">
-                        View Detail
+                        <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-3 sm:space-y-0 sm:space-x-3 mt-6 pt-6 border-t border-gray-100">
+                          <button className="flex items-center space-x-2 px-6 py-3 bg-lightblue text-white rounded-xl hover:bg-darkblue transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                            <Eye className="w-4 h-4" />
+                            <span>View Details</span>
                       </button>
-                      <button className="w-full sm:w-auto px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors text-sm font-medium">
-                        Send SMS
+                          <button className="flex items-center space-x-2 px-6 py-3 bg-green-500 text-white rounded-xl hover:bg-green-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                            <Phone className="w-4 h-4" />
+                            <span>Call Now</span>
                       </button>
-                      <button className="w-full sm:w-auto px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors text-sm font-medium">
-                        Add Review
+                          <button className="flex items-center space-x-2 px-6 py-3 bg-orange-500 text-white rounded-xl hover:bg-orange-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                            <MessageSquare className="w-4 h-4" />
+                            <span>Send Message</span>
                       </button>
+                        </div>
                     </div>
                   </div>
                 </div>
@@ -417,6 +418,7 @@ const TransportDirectory = () => {
             ))}
           </div>
         </div>
+      </div>
       </div>
     </div>
   )

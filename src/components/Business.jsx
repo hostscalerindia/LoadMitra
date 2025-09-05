@@ -9,13 +9,13 @@ const Business = () => {
           <div className="space-y-8">
             {/* Category Label */}
             <div className="inline-block">
-              <span className="text-blue-600 text-sm font-semibold">
+              <span className="text-lightblue text-para font-semibold">
                 Supercharge your Sales Team
               </span>
             </div>
             
             {/* Main Heading */}
-            <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+            <h3 className="text-heading font-bold text-darkblue leading-tight">
               Boost your Business with New Capabilities
             </h3>
             

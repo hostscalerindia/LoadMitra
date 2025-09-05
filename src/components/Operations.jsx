@@ -9,13 +9,13 @@ const Operations = () => {
           <div className="space-y-8">
             {/* Category Label */}
             <div className="inline-block">
-              <span className="text-blue-600 text-sm font-semibold">
+              <span className="text-lightblue text-para font-semibold">
                 Complete Visibility for Managers
               </span>
             </div>
             
             {/* Main Heading */}
-            <h3 className="text-3xl lg:text-4xl font-bold text-blue-900 leading-tight">
+            <h3 className="text-heading font-bold text-darkblue leading-tight">
               Monitor Operations in Real-Time
             </h3>
             
@@ -23,29 +23,29 @@ const Operations = () => {
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
                 <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <span className="text-lg text-gray-700">Ride Monitoring and Dispatch</span>
+                <span className="text-para text-gray">Ride Monitoring and Dispatch</span>
               </div>
               
               <div className="flex items-start space-x-3">
                 <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <span className="text-lg text-gray-700">Shuttle Maintenance & Safety Alerts</span>
+                <span className="text-para text-gray">Shuttle Maintenance & Safety Alerts</span>
               </div>
               
               <div className="flex items-start space-x-3">
                 <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <span className="text-lg text-gray-700">Reports & Analytics</span>
+                <span className="text-para text-gray">Reports & Analytics</span>
               </div>
             </div>
           </div>

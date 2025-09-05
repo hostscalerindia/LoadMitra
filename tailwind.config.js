@@ -86,9 +86,6 @@ export default {
         'pr-2xl': '4rem',
       },
       colors: {
-        green: '#20b024',
-        white: "#FFFFFF",
-        yellow: "#FFDD02",
         black: "#000000",
         bodyColor: "#0d0d0d",
         grey: "#9d9d9d",

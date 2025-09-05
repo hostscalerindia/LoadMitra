@@ -25,7 +25,7 @@ const ImageExample = () => {
             <div className="w-32 h-32 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-full mx-auto mb-4 flex items-center justify-center">
               <span className="text-white text-lg font-bold">Logo</span>
             </div>
-            <p className="text-sm text-neutral-600">
+            <p className="text-para text-neutral-600">
               {/* <img src={logo} alt="Company Logo" className="w-32 h-32 mx-auto" /> */}
               Place your logo.png here
             </p>
@@ -56,7 +56,7 @@ const ImageExample = () => {
             <div className="w-full h-24 bg-gradient-to-r from-accent-400 to-accent-600 rounded-lg flex items-center justify-center">
               <span className="text-white font-semibold">Responsive Image</span>
             </div>
-            <p className="text-sm text-neutral-600 mt-2 text-center">
+            <p className="text-para text-neutral-600 mt-2 text-center">
               {/* <img 
                 src={shuttleIcon} 
                 alt="Shuttle Icon" 
@@ -77,7 +77,7 @@ const ImageExample = () => {
             >
               <span className="text-white text-lg font-bold">Click Me</span>
             </div>
-            <p className="text-sm text-neutral-600">
+            <p className="text-para text-neutral-600">
               Hover and click effects
             </p>
           </div>
@@ -92,12 +92,12 @@ const ImageExample = () => {
         
         <div className="space-y-4">
           <div className="flex items-start space-x-4">
-            <div className="w-8 h-8 bg-primary-500 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
+            <div className="w-8 h-8 bg-primary-500 text-white rounded-full flex items-center justify-center text-para font-bold flex-shrink-0">
               1
             </div>
             <div>
               <h4 className="font-semibold text-neutral-800">Place Images in Folders</h4>
-              <p className="text-neutral-600 text-sm">
+              <p className="text-neutral-600 text-para">
                 Put your images in the appropriate subfolder: <code className="bg-neutral-100 px-2 py-1 rounded">src/assets/images/logos/</code>, 
                 <code className="bg-neutral-100 px-2 py-1 rounded">src/assets/images/hero/</code>, etc.
               </p>
@@ -105,24 +105,24 @@ const ImageExample = () => {
           </div>
 
           <div className="flex items-start space-x-4">
-            <div className="w-8 h-8 bg-primary-500 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
+            <div className="w-8 h-8 bg-primary-500 text-white rounded-full flex items-center justify-center text-para font-bold flex-shrink-0">
               2
             </div>
             <div>
               <h4 className="font-semibold text-neutral-800">Update index.js</h4>
-              <p className="text-neutral-600 text-sm">
+              <p className="text-neutral-600 text-para">
                 Export your images in <code className="bg-neutral-100 px-2 py-1 rounded">src/assets/images/index.js</code>
               </p>
             </div>
           </div>
 
           <div className="flex items-start space-x-4">
-            <div className="w-8 h-8 bg-primary-500 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
+            <div className="w-8 h-8 bg-primary-500 text-white rounded-full flex items-center justify-center text-para font-bold flex-shrink-0">
               3
             </div>
             <div>
               <h4 className="font-semibold text-neutral-800">Import and Use</h4>
-              <p className="text-neutral-600 text-sm">
+              <p className="text-neutral-600 text-para">
                 Import images in your components and use them in JSX
               </p>
             </div>
@@ -131,7 +131,7 @@ const ImageExample = () => {
 
         <div className="mt-6 p-4 bg-neutral-50 rounded-lg">
           <h4 className="font-semibold text-neutral-800 mb-2">Example Code:</h4>
-          <pre className="text-sm text-neutral-600 bg-white p-3 rounded border overflow-x-auto">
+          <pre className="text-para text-neutral-600 bg-white p-3 rounded border overflow-x-auto">
 {`// In src/assets/images/index.js
 export { default as logo } from './logos/logo.png'
 export { default as heroImage } from './hero/hero-bg.jpg'

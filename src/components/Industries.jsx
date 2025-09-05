@@ -5,14 +5,14 @@ const Industries = () => {
   const carouselRef = useRef(null)
   
   const industries = [
-    { name: "CAMPUS", image: "/src/assets/images/img1.png" },
-    { name: "RESIDENTIAL", image: "/src/assets/images/img1.png" },
-    { name: "SENIOR LIVING", image: "/src/assets/images/img1.png" },
-    { name: "HOTEL", image: "/src/assets/images/img1.png" },
-    { name: "RESORT", image: "/src/assets/images/img1.png" },
-    { name: "AMUSEMENT PARK", image: "/src/assets/images/img1.png" },
-    { name: "CORPORATE", image: "/src/assets/images/img1.png" },
-    { name: "HEALTHCARE", image: "/src/assets/images/img1.png" }
+    { name: "CAMPUS", image: "/src/assets/images/vector1.jpg" },
+    { name: "RESIDENTIAL", image: "/src/assets/images/vector2.jpg" },
+    { name: "SENIOR LIVING", image: "/src/assets/images/vector3.jpg" },
+    { name: "HOTEL", image: "/src/assets/images/vector4.jpg" },
+    { name: "RESORT", image: "/src/assets/images/vector1.jpg" },
+    { name: "AMUSEMENT PARK", image: "/src/assets/images/vector2.jpg" },
+    { name: "CORPORATE", image: "/src/assets/images/vector3.jpg" },
+    { name: "HEALTHCARE", image: "/src/assets/images/vector4.jpg" }
   ]
 
   // Handle scroll events to update current index
@@ -61,7 +61,7 @@ const Industries = () => {
   }
 
   return (
-    <div className="py-24 bg-blue-50 relative overflow-hidden">
+    <div className="py-24 bg-lightblue relative overflow-hidden">
       {/* Background Dot Pattern */}
       <div className="absolute inset-0">
         <img
@@ -75,11 +75,11 @@ const Industries = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-blue-900 mb-6">
+          <h2 className="text-heading font-bold text-white mb-6">
             Driving results in every Industry
           </h2>
-          <div className="w-24 h-0.5 bg-blue-600 mx-auto mb-6"></div>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+          <div className="w-24 h-0.5 bg-white mx-auto mb-6"></div>
+          <p className="text-para text-white max-w-3xl mx-auto">
             Select your Industry to discover how our platform can help
           </p>
         </div>

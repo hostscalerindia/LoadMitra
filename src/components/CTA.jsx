@@ -1,9 +1,9 @@
 const CTA = () => {
   return (
-    <div className="py-24 bg-blue-900 relative overflow-hidden">
+    <div className="py-24 bg-white relative overflow-hidden">
       
       {/* Wavy Lines Overlay */}
-      <div className="absolute inset-0">
+      {/* <div className="absolute inset-0">
         <svg className="w-full h-full" viewBox="0 0 1200 800" preserveAspectRatio="none">
           <defs>
             <pattern id="wavyLines" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
@@ -14,7 +14,7 @@ const CTA = () => {
           </defs>
           <rect width="100%" height="100%" fill="url(#wavyLines)"/>
         </svg>
-      </div>
+      </div> */}
       
       {/* Translucent Spherical Elements */}
       <div className="absolute inset-0">
@@ -28,18 +28,21 @@ const CTA = () => {
       {/* Content - Centered */}
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Main Heading */}
-        <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+        <h2 className="text-heading font-bold text-darkblue mb-6 leading-tight">
           Start the Conversation Today
         </h2>
         
         {/* Subheading */}
-        <p className="text-xl lg:text-2xl text-white mb-12 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-para text-black mb-12 max-w-3xl mx-auto leading-relaxed">
           We're ready to understand your needs and provide a tailored solution.
         </p>
         
         {/* Call-to-Action Button */}
-        <button className="bg-white text-blue-900 font-bold py-4 px-8 rounded-full text-lg uppercase tracking-wide hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg">
-          1-ON-1 DEMO
+        <button className="bg-lightblue hover:bg-darkblue text-white font-semibold py-2.5 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 border border-white/20 text-sm relative overflow-hidden group">
+          <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+          <div className="flex items-center space-x-2 relative z-10">
+            <span>1-ON-1 DEMO</span>
+          </div>
         </button>
       </div>
     </div>

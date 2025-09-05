@@ -31,25 +31,23 @@ const Hero = () => {
           {/* Text Content - Left Side */}
           <div className="max-w-2xl space-y-8 text-white">
             {/* Main Heading */}
-            <h1 className="text-3xl lg:text-5xl text-black font-bold leading-tight drop-shadow-lg">
-              <span className="block">Deliver what Riders</span>
-              <span className="block">want: Live Tracking</span>
-              <span className="block">& Easy Booking.</span>
+            <h1 className="text-heading text-black font-bold leading-tight drop-shadow-lg">
+              <span className="block">Deliver what Riders want: Live Tracking & Easy Booking.</span>
             </h1>
             
             {/* Subheadings */}
             <div className="space-y-4">
-              <p className="text-xl text-black leading-relaxed drop-shadow-md">
-                Live Tracking & Easy Booking for Riders.
-              </p>
-              <p className="text-xl text-black leading-relaxed drop-shadow-md">
-                Automated Tools for Drivers and Staff.
+              <p className="text-para text-black leading-relaxed drop-shadow-md">
+                Live Tracking & Easy Booking for Riders. Automated Tools for Drivers and Staff.
               </p>
             </div>
             
             {/* CTA Button */}
-            <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg uppercase tracking-wide text-lg drop-shadow-lg">
-              1-ON-1 DEMO
+            <button className="bg-lightblue hover:bg-darkblue text-white font-semibold py-2.5 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 border border-white/20 text-para relative overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+              <div className="flex items-center space-x-2 relative z-10">
+                <span>1-ON-1 DEMO</span>
+              </div>
             </button>
           </div>
           

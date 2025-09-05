@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
-import truckImage from '../assets/images/truck.png'
+import truckVideo from '../assets/images/indian-truck-video.mp4'
 
 const Banner = () => {
   const navigate = useNavigate()
@@ -62,13 +62,14 @@ const Banner = () => {
   }
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 pt-20">
+    // <div className="relative min-h-screen bg-gradient-to-br from-blue-50 via-white to-lightblue/50 pt-20">
+    <div className="relative min-h-screen bg-white pt-20">
       {/* Background Pattern */}
-      <div className="absolute inset-0 overflow-hidden">
+      {/* <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
         <div className="absolute top-40 left-40 w-80 h-80 bg-indigo-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-      </div>
+      </div> */}
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -76,11 +77,11 @@ const Banner = () => {
           <div className="space-y-8">
             {/* Main Heading */}
             <div>
-              <h1 className="text-5xl lg:text-6xl font-bold bg-gradient-to-r from-blue-900 via-indigo-900 to-purple-900 bg-clip-text text-transparent mb-6 leading-tight">
+              <h1 className="text-heading  text-darkblue mb-6 leading-tight">
                 Post Your Load Details
               </h1>
               
-              <p className="text-xl lg:text-2xl text-gray-700 max-w-2xl leading-relaxed">
+              <p className="text-para text-gray-700 max-w-2xl leading-relaxed">
                 Connect with verified transporters and get instant quotes for your cargo. 
                 Choose between Full Load and Part Load options.
               </p>
@@ -88,18 +89,6 @@ const Banner = () => {
 
             {/* Load Posting Form */}
             <div className="bg-white rounded-2xl p-5 shadow-xl border border-white/30">
-              {/* Header */}
-              <div className="bg-gradient-to-r from-orange-500 to-red-500 rounded-xl p-3 mb-4">
-                <div className="flex items-center text-white">
-                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
-                    <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2h-1V4H4v2H3V4z" />
-                    <path d="M3 6h1v8a1 1 0 001 1h10a1 1 0 001-1V6h1v8a3 3 0 01-3 3H6a3 3 0 01-3-3V6z" />
-                  </svg>
-                  <h3 className="text-lg font-bold">POST YOUR LOAD DETAIL</h3>
-                </div>
-              </div>
-
               {/* Load Type Tabs */}
               <div className="mb-4">
                 <label className="block text-xs font-medium text-gray-700 mb-2">
@@ -144,7 +133,7 @@ const Banner = () => {
                       value={formData.from}
                       onChange={(e) => handleInputChange('from', e.target.value)}
                       placeholder="Source City"
-                      className="w-full px-2.5 py-1.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                      className="w-full px-2.5 py-1.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-para"
                       required
                     />
                   </div>
@@ -157,7 +146,7 @@ const Banner = () => {
                       value={formData.to}
                       onChange={(e) => handleInputChange('to', e.target.value)}
                       placeholder="Destination City"
-                      className="w-full px-2.5 py-1.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                      className="w-full px-2.5 py-1.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-para"
                       required
                     />
                   </div>
@@ -174,7 +163,7 @@ const Banner = () => {
                       value={formData.sourcePinCode}
                       onChange={(e) => handleInputChange('sourcePinCode', e.target.value)}
                       placeholder="From Pin Code"
-                      className="w-full px-2.5 py-1.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                      className="w-full px-2.5 py-1.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-para"
                     />
                   </div>
                   <div>
@@ -186,7 +175,7 @@ const Banner = () => {
                       value={formData.destinationPinCode}
                       onChange={(e) => handleInputChange('destinationPinCode', e.target.value)}
                       placeholder="Destination Pin Code"
-                      className="w-full px-2.5 py-1.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                      className="w-full px-2.5 py-1.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-para"
                     />
                   </div>
                 </div>
@@ -200,7 +189,7 @@ const Banner = () => {
                     <select
                       value={formData.pickupType}
                       onChange={(e) => handleInputChange('pickupType', e.target.value)}
-                      className="w-full px-2.5 py-1.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                      className="w-full px-2.5 py-1.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-para"
                       required
                     >
                       <option value="">Select</option>
@@ -217,7 +206,7 @@ const Banner = () => {
                     <select
                       value={formData.material}
                       onChange={(e) => handleInputChange('material', e.target.value)}
-                      className="w-full px-2.5 py-1.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                      className="w-full px-2.5 py-1.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-para"
                       required
                     >
                       <option value="">Select</option>
@@ -239,7 +228,7 @@ const Banner = () => {
                     <select
                       value={formData.weight}
                       onChange={(e) => handleInputChange('weight', e.target.value)}
-                      className="w-full px-2.5 py-1.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                      className="w-full px-2.5 py-1.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-para"
                       required
                     >
                       <option value="">Select</option>
@@ -266,7 +255,7 @@ const Banner = () => {
                     <select
                       value={formData.truckType}
                       onChange={(e) => handleInputChange('truckType', e.target.value)}
-                      className="w-full px-2.5 py-1.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                      className="w-full px-2.5 py-1.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-para"
                       required
                     >
                       <option value="">Select</option>
@@ -287,7 +276,7 @@ const Banner = () => {
                     <select
                       value={formData.numTrucks}
                       onChange={(e) => handleInputChange('numTrucks', e.target.value)}
-                      className="w-full px-2.5 py-1.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                      className="w-full px-2.5 py-1.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-para"
                       required
                     >
                       <option value="">Select</option>
@@ -307,7 +296,7 @@ const Banner = () => {
                         type="date"
                         value={formData.scheduledDate}
                         onChange={(e) => handleInputChange('scheduledDate', e.target.value)}
-                        className="flex-1 px-2.5 py-1.5 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                        className="flex-1 px-2.5 py-1.5 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-para"
                         required
                       />
                       <button
@@ -333,35 +322,22 @@ const Banner = () => {
                 </div>
               </form>
             </div>
-
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-4">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-blue-600">50K+</div>
-                <div className="text-sm text-gray-600">Active Users</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-indigo-600">21K+</div>
-                <div className="text-sm text-gray-600">Transporters</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-purple-600">99.9%</div>
-                <div className="text-sm text-gray-600">Uptime</div>
-              </div>
-            </div>
           </div>
 
           {/* Right Side - Image */}
           <div className="relative">
             <div className="relative z-10">
-              {/* Main Image Container */}
+              {/* Main Video Container */}
               <div className="relative">
                 <div className="w-full h-96 lg:h-[500px] bg-gradient-to-br from-blue-400 via-indigo-400 to-purple-400 rounded-3xl shadow-2xl overflow-hidden">
-                  {/* Placeholder for actual image */}
+                  {/* Video Player */}
                   <div className="w-full h-full flex items-center justify-center">
-                    <img 
-                      src={truckImage} 
-                      alt="Transport Truck" 
+                    <video 
+                      src={truckVideo}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
                       className="w-full h-full object-cover rounded-3xl"
                     />
                   </div>
@@ -376,7 +352,7 @@ const Banner = () => {
                       </svg>
                     </div>
                     <div>
-                      <div className="text-sm font-semibold text-gray-900">Live Tracking</div>
+                      <div className="text-para font-semibold text-gray-900">Live Tracking</div>
                       <div className="text-xs text-gray-500">Real-time updates</div>
                     </div>
                   </div>
@@ -391,7 +367,7 @@ const Banner = () => {
                       </svg>
                     </div>
                     <div>
-                      <div className="text-sm font-semibold text-gray-900">GPS Enabled</div>
+                      <div className="text-para font-semibold text-gray-900">GPS Enabled</div>
                       <div className="text-xs text-gray-500">Precise location</div>
                     </div>
                   </div>
@@ -407,10 +383,10 @@ const Banner = () => {
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fadeIn">
           <div className="bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 rounded-3xl p-8 max-w-md w-full shadow-2xl border border-white/20 animate-slideUp relative overflow-hidden">
             {/* Background Pattern */}
-            <div className="absolute inset-0 overflow-hidden">
+            {/* <div className="absolute inset-0 overflow-hidden">
               <div className="absolute -top-20 -right-20 w-40 h-40 bg-white/10 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
               <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-white/10 rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-1000"></div>
-            </div>
+            </div> */}
 
             {/* Close Button */}
             <button
@@ -437,7 +413,7 @@ const Banner = () => {
             <form onSubmit={handleModalSubmit} className="space-y-4 relative z-10">
               {/* Phone Field */}
               <div className="group">
-                <label className="block text-sm font-semibold text-white mb-2 flex items-center">
+                <label className="block text-para font-semibold text-white mb-2 flex items-center">
                   <svg className="w-4 h-4 mr-2 text-blue-200" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                   </svg>
@@ -455,7 +431,7 @@ const Banner = () => {
 
               {/* OTP Field */}
               <div className="group">
-                <label className="block text-sm font-semibold text-white mb-2 flex items-center">
+                <label className="block text-para font-semibold text-white mb-2 flex items-center">
                   <svg className="w-4 h-4 mr-2 text-blue-200" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
                   </svg>

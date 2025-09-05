@@ -22,7 +22,7 @@ const Platform = () => {
               </svg>
             </div>
             <h3 className="text-xl font-semibold text-neutral-800 mb-3">Dashboard</h3>
-            <p className="text-neutral-600 text-sm">Comprehensive overview of all shuttle operations</p>
+            <p className="text-neutral-600 text-para">Comprehensive overview of all shuttle operations</p>
           </div>
 
           {/* Analytics */}
@@ -33,7 +33,7 @@ const Platform = () => {
               </svg>
             </div>
             <h3 className="text-xl font-semibold text-neutral-800 mb-3">Analytics</h3>
-            <p className="text-neutral-600 text-sm">Deep insights into performance metrics</p>
+            <p className="text-neutral-600 text-para">Deep insights into performance metrics</p>
           </div>
 
           {/* Reports */}
@@ -44,7 +44,7 @@ const Platform = () => {
               </svg>
             </div>
             <h3 className="text-xl font-semibold text-neutral-800 mb-3">Reports</h3>
-            <p className="text-neutral-600 text-sm">Detailed reports and documentation</p>
+            <p className="text-neutral-600 text-para">Detailed reports and documentation</p>
           </div>
 
           {/* Settings */}
@@ -56,7 +56,7 @@ const Platform = () => {
               </svg>
             </div>
             <h3 className="text-xl font-semibold text-neutral-800 mb-3">Settings</h3>
-            <p className="text-neutral-600 text-sm">Customize your platform experience</p>
+            <p className="text-neutral-600 text-para">Customize your platform experience</p>
           </div>
         </div>
       </div>

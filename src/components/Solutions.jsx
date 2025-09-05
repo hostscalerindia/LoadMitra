@@ -1,6 +1,6 @@
 const Solutions = () => {
   return (
-    <div className="relative py-24 bg-blue-600 overflow-hidden">
+    <div className="relative py-24 bg-lightblue overflow-hidden">
       {/* Wavy Background Lines */}
       <div className="absolute inset-0">
         <svg className="w-full h-full" viewBox="0 0 1200 800" preserveAspectRatio="none">
@@ -19,14 +19,14 @@ const Solutions = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+          <h2 className="text-heading font-bold text-white mb-6">
             Flexible Solutions for Every Scenario
           </h2>
           
           {/* Separator Line */}
           <div className="w-24 h-0.5 bg-white mx-auto mb-6"></div>
           
-          <p className="text-xl text-white max-w-3xl mx-auto">
+          <p className="text-para text-white max-w-3xl mx-auto">
             From Fixed Routes to On-Demand Requests, we've got you covered
           </p>
         </div>
@@ -60,8 +60,11 @@ const Solutions = () => {
               </p>
               
               {/* Button */}
-              <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
-                LEARN MORE →
+              <button className="bg-lightblue hover:bg-darkblue text-white font-semibold py-2.5 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 border border-white/20 text-para relative overflow-hidden group">
+                <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                <div className="flex items-center space-x-2 relative z-10">
+                  <span>LEARN MORE →</span>
+                </div>
               </button>
             </div>
           </div>
@@ -96,8 +99,11 @@ const Solutions = () => {
               </p>
               
               {/* Button */}
-              <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
-                LEARN MORE →
+              <button className="bg-lightblue hover:bg-darkblue text-white font-semibold py-2.5 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 border border-white/20 text-para relative overflow-hidden group">
+                <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                <div className="flex items-center space-x-2 relative z-10">
+                  <span>LEARN MORE →</span>
+                </div>
               </button>
             </div>
           </div>
@@ -134,8 +140,11 @@ const Solutions = () => {
               </p>
               
               {/* Button */}
-              <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
-                LEARN MORE →
+              <button className="bg-lightblue hover:bg-darkblue text-white font-semibold py-2.5 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 border border-white/20 text-para relative overflow-hidden group">
+                <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                <div className="flex items-center space-x-10">
+                  <span>LEARN MORE →</span>
+                </div>
               </button>
             </div>
           </div>

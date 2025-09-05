@@ -25,40 +25,40 @@ const Navbar = () => {
   }, [])
 
   const navItems = [
-    {
-      name: 'Platform',
-      path: '/platform',
-      items: [
-        { name: 'Dashboard', path: '/platform/dashboard' },
-        { name: 'Analytics', path: '/platform/analytics' },
-        { name: 'Reports', path: '/platform/reports' },
-        { name: 'Settings', path: '/platform/settings' }
-      ]
-    },
-    {
-      name: 'Industries',
-      path: '/industries',
-      items: [
-        { name: 'Hotels', path: '/industries/hotels' },
-        { name: 'Resorts', path: '/industries/resorts' },
-        { name: 'Theme Parks', path: '/industries/theme-parks' },
-        { name: 'Events and Conferences', path: '/industries/events' },
-        { name: 'Car Rental & Parking', path: '/industries/car-rental' },
-        { name: 'Crew Transportation', path: '/industries/crew' },
-        { name: 'Corporate', path: '/industries/corporate' },
-        { name: 'University Campus', path: '/industries/university' }
-      ]
-    },
-    {
-      name: 'Company',
-      path: '/company',
-      items: [
-        { name: 'About Us', path: '/about' },
-        { name: 'Contact', path: '/contact' },
-        { name: 'Careers', path: '/careers' },
-        { name: 'Blog', path: '/blog' }
-      ]
-    }
+    // {
+    //   name: 'Platform',
+    //   path: '/platform',
+    //   items: [
+    //     { name: 'Dashboard', path: '/platform/dashboard' },
+    //     { name: 'Analytics', path: '/platform/analytics' },
+    //     { name: 'Reports', path: '/platform/reports' },
+    //     { name: 'Settings', path: '/platform/settings' }
+    //   ]
+    // },
+    // {
+    //   name: 'Industries',
+    //   path: '/industries',
+    //   items: [
+    //     { name: 'Hotels', path: '/industries/hotels' },
+    //     { name: 'Resorts', path: '/industries/resorts' },
+    //     { name: 'Theme Parks', path: '/industries/theme-parks' },
+    //     { name: 'Events and Conferences', path: '/industries/events' },
+    //     { name: 'Car Rental & Parking', path: '/industries/car-rental' },
+    //     { name: 'Crew Transportation', path: '/industries/crew' },
+    //     { name: 'Corporate', path: '/industries/corporate' },
+    //     { name: 'University Campus', path: '/industries/university' }
+    //   ]
+    // },
+    // {
+    //   name: 'Company',
+    //   path: '/company',
+    //   items: [
+    //     { name: 'About Us', path: '/about' },
+    //     { name: 'Contact', path: '/contact' },
+    //     { name: 'Careers', path: '/careers' },
+    //     { name: 'Blog', path: '/blog' }
+    //   ]
+    // }
   ]
 
   const handleMouseEnter = (dropdownName) => {

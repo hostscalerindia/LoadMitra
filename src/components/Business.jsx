@@ -18,7 +18,7 @@ const Business = () => {
             
             {/* Main Heading */}
             <h3 className="text-heading font-bold text-darkblue leading-tight">
-              Boost your Business with New Capabilities
+              Boost your Business with New <span className='text-lightblue'>Capabilities</span>
             </h3>
             
             {/* Features List */}

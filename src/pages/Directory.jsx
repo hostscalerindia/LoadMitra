@@ -14,7 +14,7 @@ const Directory = () => {
         <div className="text-center mb-20">
           {/* Main Heading */}
           <h1 className="text-heading font-bold text-darkblue mb-8 leading-tight">
-            Find Your Perfect Transport Partner
+            Find Your Perfect <span className='text-lightblue'>Transport Partner</span>
           </h1>
           
           {/* Separator Line */}

@@ -98,7 +98,7 @@ const TransportDirectory = () => {
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-4 lg:space-y-0">
             {/* Title and Stats */}
             <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-8">
-              <h1 className="text-2xl font-bold text-darkblue">Transport Directory</h1>
+              <h1 className="text-2xl font-bold text-lightblue">Transport Directory</h1>
               <div className="flex items-center space-x-6 text-sm text-gray-600">
                 <div className="flex items-center space-x-2">
                   <Users className="w-4 h-4 text-lightblue" />

@@ -33,7 +33,7 @@ const Hero = () => {
           <div className="max-w-2xl space-y-8 text-white">
             {/* Main Heading */}
             <h1 className="text-heading text-black font-bold leading-tight drop-shadow-lg">
-              <span className="block">Deliver what Riders want: Live Tracking & Easy Booking.</span>
+              <span className="block">Deliver what Riders want: <span className='text-lightblue'>Live Tracking & Easy Booking.</span></span>
             </h1>
             
             {/* Subheadings */}

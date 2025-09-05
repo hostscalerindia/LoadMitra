@@ -18,7 +18,7 @@ const Operations = () => {
             
             {/* Main Heading */}
             <h3 className="text-heading font-bold text-darkblue leading-tight">
-              Monitor Operations in Real-Time
+              Monitor Operations in <span className='text-lightblue'>Real-Time</span>
             </h3>
             
             {/* Features List */}

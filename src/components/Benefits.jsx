@@ -7,7 +7,7 @@ const Benefits = () => {
         {/* Header Section */}
         <div className="text-center mb-16">
           <h2 className="text-heading font-bold text-darkblue mb-6">
-            Unlock Benefits for Every Stakeholder
+            Unlock Benefits for Every <span className='text-lightblue'>Stakeholder</span>
           </h2>
           <p className="text-para text-gray max-w-3xl mx-auto">
             Empower Riders, Drivers & Staff

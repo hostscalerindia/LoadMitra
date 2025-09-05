@@ -29,7 +29,7 @@ const CTA = () => {
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Main Heading */}
         <h2 className="text-heading font-bold text-darkblue mb-6 leading-tight">
-          Start the Conversation Today
+          Start the Conversation <span className='text-lightblue'>Today</span>
         </h2>
         
         {/* Subheading */}

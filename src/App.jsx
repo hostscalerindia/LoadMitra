@@ -1,11 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { Navbar, Footer } from './components'
+import { Navbar, Footer, ScrollToTop } from './components'
 import { Home, Platform, About, Track, Directory } from './pages'
 
 function App() {
   return (
     <Router>
       <div className="min-h-screen bg-gradient-to-br from-primary-50 via-secondary-50 to-accent-50">
+        <ScrollToTop />
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />

@@ -70,7 +70,7 @@ const FirstHomeSection = () => {
         <div className="absolute bg-black/20"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 sm:pb-12 lg:pb-16">
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left side - image */}
           <div className="hidden xl:block">
@@ -321,15 +321,6 @@ const FirstHomeSection = () => {
                   </button>
                 </div>
               </form>
-              
-              <div className="mt-6 text-center">
-                <p className="text-sm text-gray-600 mb-2">
-                  🚛 Get instant quotes from verified transporters
-                </p>
-                <p className="text-xs text-gray-500">
-                  ✓ Real-time tracking • ✓ Secure payments • ✓ 24/7 support
-                </p>
-              </div>
             </div>
           </div>
         </div>

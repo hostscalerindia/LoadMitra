@@ -1,4 +1,4 @@
-import { Hero, Solutions, Benefits, Operations, Automation, Business, Industries, CTA } from '../components'
+import { Hero, Solutions, Benefits, Operations, Automation, Business, Industries, LiveDisplay, CTA } from '../components'
 
 const Track = () => {
   return (
@@ -10,6 +10,7 @@ const Track = () => {
       <Automation />
       <Business />
       <Industries />
+      <LiveDisplay />
       <CTA />
     </div>
   )

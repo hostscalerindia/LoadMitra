@@ -101,37 +101,19 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center">
-            <Link to="/" className="flex items-center group cursor-pointer" onClick={closeMobileMenu}>
-              <div className="relative">
-                {/* Outer rotating ring */}
-                <div className="absolute inset-0 border-2 border-transparent border-t-lightblue/60 border-r-darkblue/40 rounded-full animate-spin" style={{ animationDuration: '3s' }}></div>
-                {/* Middle pulsing ring */}
-                <div className="absolute inset-1.5 border-2 border-lightblue/40 rounded-full animate-ping"></div>
-                {/* Inner glow effect */}
-                <div className="absolute inset-3 bg-gradient-to-r from-lightblue/40 via-blue-400/50 to-lightblue/40 rounded-full blur-lg animate-pulse"></div>
-                {/* Sparkle effects */}
-                <div className="absolute top-1.5 right-1.5 w-1.5 h-1.5 bg-yellow-400 rounded-full animate-bounce" style={{ animationDelay: '0s' }}></div>
-                <div className="absolute bottom-2 left-2 w-1 h-1 bg-yellow-300 rounded-full animate-bounce" style={{ animationDelay: '0.5s' }}></div>
-                <div className="absolute top-1/2 left-0.5 w-0.5 h-0.5 bg-yellow-500 rounded-full animate-bounce" style={{ animationDelay: '1s' }}></div>
-                {/* Logo with enhanced effects */}
-                <img 
-                  src={logoimage} 
-                  alt="LoadMitra Logo" 
-                  className="relative h-[120px] w-[120px] transition-all duration-300 group-hover:scale-110 drop-shadow-2xl filter brightness-110 contrast-110 saturate-110"
-                />
-                {/* Shine overlay */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform -skew-x-12 rounded-full"></div>
-                {/* Floating particles */}
-                <div className="absolute -top-0.5 -right-0.5 w-0.5 h-0.5 bg-lightblue rounded-full animate-ping" style={{ animationDelay: '0.2s' }}></div>
-                <div className="absolute -bottom-0.5 -left-0.5 w-0.5 h-0.5 bg-darkblue rounded-full animate-ping" style={{ animationDelay: '0.8s' }}></div>
-              </div>
+            <Link to="/" className="flex items-center cursor-pointer" onClick={closeMobileMenu}>
+              <img 
+                src={logoimage} 
+                alt="LoadMitra Logo" 
+                className="h-[140px] w-[140px]"
+              />
             </Link>
           </div>
 
           <div className="hidden lg:flex items-center space-x-2">
             <Link 
               to="/" 
-              className={`px-3 py-2 text-sm font-medium transition-all duration-300 hover:scale-105 relative group rounded-lg ${
+              className={`px-3 py-2 text-sm font-normal transition-all duration-300 hover:scale-105 relative group rounded-lg ${
                 isActive('/') 
                   ? 'text-blue-600 bg-blue-50 shadow-md border-2 border-blue-300 ring-2 ring-blue-200' 
                   : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50/70 hover:border-blue-200 hover:shadow-sm'
@@ -147,7 +129,7 @@ const Navbar = () => {
 
             <Link 
               to="/track" 
-              className={`px-3 py-2 text-sm font-medium transition-all duration-300 hover:scale-105 relative group rounded-lg ${
+              className={`px-3 py-2 text-sm font-normal transition-all duration-300 hover:scale-105 relative group rounded-lg ${
                 isActive('/track') 
                   ? 'text-blue-600 bg-blue-50 shadow-md border-2 border-blue-300 ring-2 ring-blue-200' 
                   : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50/70 hover:border-blue-200 hover:shadow-sm'
@@ -163,7 +145,7 @@ const Navbar = () => {
 
             <Link 
               to="/directory" 
-              className={`px-3 py-2 text-sm font-medium transition-all duration-300 hover:scale-105 relative group rounded-lg ${
+              className={`px-3 py-2 text-sm font-normal transition-all duration-300 hover:scale-105 relative group rounded-lg ${
                 isActive('/directory') 
                   ? 'text-blue-600 bg-blue-50 shadow-md border-2 border-blue-300 ring-2 ring-blue-200' 
                   : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50/70 hover:border-blue-200 hover:shadow-sm'
@@ -262,7 +244,7 @@ const Navbar = () => {
           <div className="px-4 pt-2 pb-6 space-y-4">
             <Link 
               to="/" 
-              className={`block px-4 py-2.5 text-sm font-medium rounded-lg transition-all duration-300 ${
+              className={`block px-4 py-2.5 text-sm font-normal rounded-lg transition-all duration-300 ${
                 isActive('/') 
                   ? 'text-blue-600 bg-blue-50 border-2 border-blue-300 ring-2 ring-blue-200 shadow-md' 
                   : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50/70 hover:border-blue-200'
@@ -279,7 +261,7 @@ const Navbar = () => {
 
             <Link 
               to="/track" 
-              className={`block px-4 py-2.5 text-sm font-medium rounded-lg transition-all duration-300 ${
+              className={`block px-4 py-2.5 text-sm font-normal rounded-lg transition-all duration-300 ${
                 isActive('/track') 
                   ? 'text-blue-600 bg-blue-50 border-2 border-blue-300 ring-2 ring-blue-200 shadow-md' 
                   : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50/70 hover:border-blue-200'
@@ -296,7 +278,7 @@ const Navbar = () => {
 
             <Link 
               to="/directory" 
-              className={`block px-4 py-2.5 text-sm font-medium rounded-lg transition-all duration-300 ${
+              className={`block px-4 py-2.5 text-sm font-normal rounded-lg transition-all duration-300 ${
                 isActive('/directory') 
                   ? 'text-blue-600 bg-blue-50 border-2 border-blue-300 ring-2 ring-blue-200 shadow-md' 
                   : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50/70 hover:border-blue-200'

@@ -1,4 +1,4 @@
-import { Hero, Solutions, Benefits, Operations, Automation, Business, Industries, LiveDisplay, CTA } from '../components'
+import { Hero, Solutions, Benefits, Operations, Automation, Business, Industries, ShuttleMapReplay, LiveDisplay, CTA } from '../components'
 
 const Track = () => {
   return (
@@ -7,6 +7,7 @@ const Track = () => {
       <Solutions />
       <Benefits />
       <Operations />
+      <ShuttleMapReplay />
       <Automation />
       <Business />
       <Industries />

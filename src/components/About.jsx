@@ -162,30 +162,28 @@ const About = () => {
         </div>
       </div>
 
-      {/* Hero Section with Diagonal Design */}
-      <div className="relative bg-lightblue py-16 mb-16">
-        <div className="absolute inset-0 bg-black/10"></div>
+      {/* Hero Section with Background Image */}
+      <div className="relative py-16 mb-16" style={{backgroundImage: 'url("https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80")', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}>
+        <div className="absolute inset-0 bg-gradient-to-br from-lightblue/80 via-darkblue/70 to-blue-600/60"></div>
+        <div className="absolute inset-0 bg-black/20"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-heading font-bold text-white mb-4 leading-tight">
+          <h1 className="text-heading font-bold text-white mb-4 leading-tight drop-shadow-2xl" style={{textShadow: '2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5)'}}>
             Revolutionizing Logistic
           </h1>
-          <p className="text-para text-white max-w-3xl mx-auto leading-relaxed">
+          <p className="text-para text-white max-w-3xl mx-auto leading-relaxed drop-shadow-lg" style={{textShadow: '1px 1px 4px rgba(0,0,0,0.7)'}}>
             India's most trusted platform connecting shippers with verified transporters
           </p>
 
           {/* Floating Stats Cards */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
             {stats.map((stat, index) => (
-              <div key={index} className="bg-white/20 backdrop-blur-sm rounded-xl p-4 border border-white/30">
-                <div className="text-2xl font-bold text-white mb-1">{stat.number}</div>
-                <div className="text-white/80 text-sm">{stat.label}</div>
+              <div key={index} className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 shadow-2xl hover:bg-white/15 transition-all duration-300 hover:scale-105 hover:shadow-3xl">
+                <div className="text-2xl font-bold text-white mb-1 drop-shadow-lg">{stat.number}</div>
+                <div className="text-white/90 text-sm drop-shadow-md">{stat.label}</div>
               </div>
             ))}
           </div>
         </div>
-
-        {/* Diagonal Cut */}
-        {/* <div className="absolute bottom-0 left-0 w-full h-0 bg-white transform skew-y-2"></div> */}
       </div>
 
       {/* Custom Animations */}

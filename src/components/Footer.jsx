@@ -22,11 +22,11 @@ const Footer = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
           
           <div className="space-y-6">
             <div className="flex items-center">
-              <span className="text-heading font-bold bg-gradient-to-r from-darkblue via-lightblue to-darkpink bg-clip-text text-white">
+              <span className="text-subHeading font-bold bg-gradient-to-r from-darkblue via-lightblue to-darkpink bg-clip-text text-white">
                 LoadMitra
               </span>
             </div>
@@ -52,17 +52,17 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-white hover:text-lightblue transition-colors duration-300">
                 <Mail className="w-5 h-5 text-white" />
-                <span className="text-para text-white font-bold">www.loadmitra.com</span>
+                <span className="text-sm text-white font-bold">www.loadmitra.com</span>
               </div>
               <div className="flex items-center space-x-3 text-white hover:text-lightblue transition-colors duration-300">
                 <Phone className="w-5 h-5 text-white" />
-                <span className="text-para text-white font-bold">(888) 574-8885</span>
+                <span className="text-sm text-white font-bold">(888) 574-8885</span>
               </div>
             </div>
           </div>
 
           <div className="space-y-6">
-            <h3 className="text-lg font-bold text-white ml-[5px]">Platform</h3>
+            <h3 className="text-base font-bold text-white ml-[5px]">Platform</h3>
             <div className="space-y-3">
               {[
                 { name: 'Track & Book' },
@@ -73,62 +73,40 @@ const Footer = () => {
                   className="flex items-center space-x-2 text-white group"
                 >
                   <ChevronRight className="w-4 h-4 text-white group-hover:scale-110 transition-transform duration-300" />
-                  <span className="text-para text-white font-bold">{item.name}</span>
+                  <span className="text-sm text-white font-bold">{item.name}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="space-y-6">
-            <h3 className="text-lg font-bold text-white ml-[5px]">Industries</h3>
-            <div className="space-y-3">
-              {[
-                { name: 'E-commerce' },
-                { name: 'Manufacturing' },
-                { name: 'Construction' }
-              ].map((item, index) => (
-                <div
-                  key={index}
-                  className="flex items-center space-x-2 text-white group"
-                >
-                  <ChevronRight className="w-4 h-4 text-white group-hover:scale-110 transition-transform duration-300" />
-                  <span className="text-para text-white font-bold">{item.name}</span>
-                </div>
-              ))}
-            </div>
-          </div>
 
           <div className="space-y-6">
-            <h3 className="text-lg font-bold text-white ml-[5px]">Company</h3>
+            <h3 className="text-base font-bold text-white ml-[5px]">Navigation</h3>
             <div className="space-y-3">
-              {[
-                { name: 'About Us' },
-                { name: 'Contact' }
-              ].map((item, index) => (
-                <div
-                  key={index}
-                  className="flex items-center space-x-2 text-white group"
-                >
-                  <ChevronRight className="w-4 h-4 text-white group-hover:scale-110 transition-transform duration-300" />
-                  <span className="text-para text-white font-bold">{item.name}</span>
-                </div>
-              ))}
+              <Link to="/" className="flex items-center space-x-2 text-white group hover:text-lightblue transition-colors duration-300">
+                <ChevronRight className="w-4 h-4 text-white group-hover:scale-110 transition-transform duration-300" />
+                <span className="text-sm text-white font-bold">Home</span>
+              </Link>
+              <Link to="/track" className="flex items-center space-x-2 text-white group hover:text-lightblue transition-colors duration-300">
+                <ChevronRight className="w-4 h-4 text-white group-hover:scale-110 transition-transform duration-300" />
+                <span className="text-sm text-white font-bold">Track</span>
+              </Link>
+              <Link to="/directory" className="flex items-center space-x-2 text-white group hover:text-lightblue transition-colors duration-300">
+                <ChevronRight className="w-4 h-4 text-white group-hover:scale-110 transition-transform duration-300" />
+                <span className="text-sm text-white font-bold">Directory</span>
+              </Link>
+              <Link to="/contact" className="flex items-center space-x-2 text-white group hover:text-lightblue transition-colors duration-300">
+                <ChevronRight className="w-4 h-4 text-white group-hover:scale-110 transition-transform duration-300" />
+                <span className="text-sm text-white font-bold">Contact</span>
+              </Link>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-lightblue/30 mt-12 pt-8">
+        <div className="border-t border-lightblue/30 pt-5">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">
-            <div className="text-white text-sm sm:text-para">
+            <div className="text-white text-xs">
               © 2024 LoadMitra. All rights reserved.
-            </div>
-            <div className="flex space-x-6 text-sm sm:text-para">
-              <span className="text-white hover:text-lightblue transition-colors duration-300">
-                Terms
-              </span>
-              <span className="text-white hover:text-lightblue transition-colors duration-300">
-                Privacy
-              </span>
             </div>
           </div>
           

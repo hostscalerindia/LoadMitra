@@ -33,78 +33,28 @@ const About = () => {
     { number: "24/7", label: "Support" }
   ]
 
-  const journeySteps = [
-    {
-      step: "01", 
-      title: "Book",
-      description: "Get instant quotes and book your load",
-      icon: <ClipboardList className="w-8 h-8" />
-    },
-    {
-      step: "02",
-      title: "Track",
-      description: "Monitor your cargo in real-time",
-      icon: <MapPin className="w-8 h-8" />
-    },
-    {
-      step: "03",
-      title: "Deliver",
-      description: "Safe and timely delivery guaranteed",
-      icon: <CheckCircle className="w-8 h-8" />
-    }
-  ]
 
   return (
-    <div className="bg-white relative overflow-hidden">
+    <div className="pt-10 bg-white relative overflow-hidden">
 
-<div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Journey Steps - Compact Timeline */}
-        <div className="mb-10 mt-16">
-          <h2 className="text-heading font-bold text-darkblue text-center mb-8">
-            Your Journey with <span className='text-lightblue'>LoadMitra</span>
-          </h2>
-          
-          <div className="relative">
-            {/* Connection Line - Connecting all 3 steps */}
-            <div className="absolute top-[88px] left-[15%] right-[15%] h-1 bg-lightblue hidden lg:block"></div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {journeySteps.map((step, index) => (
-                <div key={index} className="relative text-center group">
-                  {/* Step Number Badge - Above Icon */}
-                  <div className="w-10 h-10 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 text-sm font-bold text-white shadow-md">
-                    {step.step}
-                  </div>
-                  
-                  {/* Step Icon - Larger */}
-                  <div className="w-16 h-16 bg-lightblue rounded-xl flex items-center justify-center mx-auto mb-3 text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    {step.icon}
-                  </div>
-                  
-                  <h3 className="text-para font-bold text-darkblue mb-2">{step.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{step.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
 
         {/* Features Grid - Hexagon Style */}
         <div className="mb-24">
           <h2 className="text-heading font-bold text-center mb-16 text-darkblue">
             Why Choose <span className='text-lightblue'>LoadMitra ?</span>
           </h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
-              <div 
+              <div
                 key={index}
                 className="group relative rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border-2 border-transparent hover:border-lightblue "
               >
                 {/* Gradient Background on hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-lightblue/20 to-darkblue/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                
+
                 <div className="relative z-10">
                   <div className="w-12 h-12 bg-lightblue flex items-center justify-center rounded-xl text-white mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     {/* Icon size reduced */}
@@ -115,7 +65,7 @@ const About = () => {
                   <h3 className="text-xl font-bold bg-gradient-to-r from-darkblue to-lightblue bg-clip-text text-transparent mb-4">{feature.title}</h3>
                   <p className="text-darkblue/80 leading-relaxed">{feature.description}</p>
                 </div>
-                
+
                 {/* Corner Accent */}
                 <div className="absolute top-0 right-0 w-0 h-0 border-l-[30px] border-l-transparent border-t-[30px] border-t-lightblue rounded-tr-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
@@ -127,21 +77,21 @@ const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
           {/* Left - Content */}
           <div className="space-y-8">
-            <div className="inline-block bg text-white px-6 py-3 rounded-full text-sm font-semibold">
+            <div className="inline-block bg text-white px-6 py-3 rounded-full text-para font-semibold">
               About RoadMitra
             </div>
-            
+
             <h2 className="text-heading font-bold text-darkblue leading-tight">
               Connecting India's
               <span className="block text-lightblue">Transport Network</span>
             </h2>
-            
+
             <p className="text-para text-gray-700 leading-relaxed">
-              RoadMitra is India's premier logistics platform that bridges the gap between 
-              shippers and transporters. We've built a comprehensive ecosystem that ensures 
+              RoadMitra is India's premier logistics platform that bridges the gap between
+              shippers and transporters. We've built a comprehensive ecosystem that ensures
               seamless cargo movement across the country.
             </p>
-            
+
             <div className="space-y-4">
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
@@ -151,10 +101,10 @@ const About = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-darkblue">Verified Partners</h4>
-                  <p className="text-sm text-gray-600">All transporters are verified and insured</p>
+                  <p className="text-para text-gray-600">All transporters are verified and insured</p>
                 </div>
               </div>
-              
+
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
                   <svg className="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
@@ -163,7 +113,7 @@ const About = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-darkblue">Smart Technology</h4>
-                  <p className="text-sm text-gray-600">AI-powered route optimization</p>
+                  <p className="text-para text-gray-600">AI-powered route optimization</p>
                 </div>
               </div>
             </div>
@@ -185,7 +135,7 @@ const About = () => {
                     />
                   </div>
                 </div>
-                
+
                 {/* Floating Feature Cards */}
                 <div className="absolute -top-8 -right-8 bg-white rounded-2xl p-6 shadow-2xl border border-gray-100">
                   <div className="flex items-center space-x-4">
@@ -228,18 +178,18 @@ const About = () => {
           <p className="text-para text-white max-w-3xl mx-auto leading-relaxed">
             India's most trusted platform connecting shippers with verified transporters
           </p>
-          
+
           {/* Floating Stats Cards */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
             {stats.map((stat, index) => (
               <div key={index} className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 border border-white/30">
                 <div className="text-3xl font-bold text-white mb-2">{stat.number}</div>
-                <div className="text-white/80 text-sm">{stat.label}</div>
+                <div className="text-white/80 text-para">{stat.label}</div>
               </div>
             ))}
           </div>
         </div>
-        
+
         {/* Diagonal Cut */}
         {/* <div className="absolute bottom-0 left-0 w-full h-0 bg-white transform skew-y-2"></div> */}
       </div>

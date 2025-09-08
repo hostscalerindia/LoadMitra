@@ -4,15 +4,16 @@ import Banner from '../components/Banner'
 import About from '../components/About'
 import Dashboard from '../components/Dashboard'
 import RecentLoads from '../components/RecentLoads'
+import JourneySteps from '../components/JourneySteps'
 
 const Home = () => {
   return (
     <div className="min-h-screen">
       <FirstHomeSection />
-      {/* <Banner /> */}
       <About />
       <RecentLoads />
       <Dashboard />
+      <JourneySteps />
     </div>
   )
 }

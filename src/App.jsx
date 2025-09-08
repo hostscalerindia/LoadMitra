@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Navbar, Footer, ScrollToTop } from './components'
-import { Home, Platform, About, Track, Directory } from './pages'
+import { Home, Platform, About, Track, Directory, Contact } from './pages'
 
 function App() {
   return (
@@ -14,6 +14,7 @@ function App() {
           <Route path="/directory" element={<Directory />} />
           <Route path="/platform" element={<Platform />} />
           <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
           {/* Add more routes as needed */}
         </Routes>
         <Footer />

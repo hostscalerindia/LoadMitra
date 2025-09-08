@@ -61,7 +61,7 @@ const Solutions = () => {
               {/* Button */}
               <button className="bg-lightblue hover:bg-darkblue text-white font-semibold py-2.5 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 border border-white/20 text-para relative overflow-hidden group">
                 <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-                <div className="flex items-center space-x-2 relative z-10">
+                <div className="flex text-sm items-center space-x-2 relative z-10">
                   <span>LEARN MORE →</span>
                 </div>
               </button>
@@ -93,7 +93,7 @@ const Solutions = () => {
               {/* Button */}
               <button className="bg-lightblue hover:bg-darkblue text-white font-semibold py-2.5 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 border border-white/20 text-para relative overflow-hidden group">
                 <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-                <div className="flex items-center space-x-2 relative z-10">
+                <div className="flex text-sm items-center space-x-2 relative z-10">
                   <span>LEARN MORE →</span>
                 </div>
               </button>
@@ -125,7 +125,7 @@ const Solutions = () => {
               {/* Button */}
               <button className="bg-lightblue hover:bg-darkblue text-white font-semibold py-2.5 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 border border-white/20 text-para relative overflow-hidden group">
                 <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-                <div className="flex items-center space-x-10">
+                <div className="flex text-sm items-center space-x-10">
                   <span>LEARN MORE →</span>
                 </div>
               </button>

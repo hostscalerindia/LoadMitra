@@ -115,10 +115,8 @@ const Navbar = () => {
                   }}
                 />
                 <div className="relative">
-                  <h1 className="absolute text-lg sm:text-xl lg:text-1xl font-bold" style={{
+                  <h1 className="absolute text-[10px] sm:text-xl lg:text-1xl font-bold left-[25px] top-[-10px] sm:left-[15px] sm:top-0" style={{
                     color: 'black',
-                    left: '15px',
-                    top: '0px',
                     textShadow: '2px 2px 6px rgba(255,255,255,0.9), 0 0 15px rgba(255,255,255,0.7), 0 0 25px rgba(96, 165, 250, 0.3)'
                   }}>
                     LOAD<span style={{color: '#60A5FA', textShadow: '2px 2px 6px rgba(255,255,255,0.9), 0 0 15px rgba(255,255,255,0.7), 0 0 25px rgba(96, 165, 250, 0.5)'}}>MITRA</span>
@@ -174,6 +172,22 @@ const Navbar = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                 </svg>
                 <span>Directory</span>
+              </div>
+            </Link>
+
+            <Link 
+              to="/contact" 
+              className={`px-2 py-1.5 text-sm font-medium transition-all duration-300 hover:scale-105 relative group rounded-md ${
+                isActive('/contact') 
+                  ? 'text-white bg-lightblue shadow-lg border border-darkblue' 
+                  : 'text-gray-700 hover:text-lightblue hover:bg-lightblue/10 hover:border-lightblue/30 hover:shadow-sm'
+              }`}
+            >
+              <div className="flex items-center space-x-1">
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <span>Contact</span>
               </div>
             </Link>
 
@@ -312,6 +326,23 @@ const Navbar = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                 </svg>
                 <span>Directory</span>
+              </div>
+            </Link>
+
+            <Link 
+              to="/contact" 
+              className={`block px-3 py-2 text-sm font-medium rounded-md transition-all duration-300 ${
+                isActive('/contact') 
+                  ? 'text-white bg-lightblue border border-darkblue shadow-lg' 
+                  : 'text-gray-700 hover:text-lightblue hover:bg-lightblue/10 hover:border-lightblue/30'
+              }`}
+              onClick={closeMobileMenu}
+            >
+              <div className="flex items-center space-x-3">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <span>Contact</span>
               </div>
             </Link>
 

@@ -152,10 +152,10 @@ const FirstHomeSection = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 sm:pb-12 lg:pb-16">
-        <div className="flex flex-col xl:flex-row gap-8 lg:gap-12 items-center">
+        <div className="flex flex-col xl:flex-row gap-8 lg:gap-12">
           {/* Left side - dynamic text */}
-          <div className="order-1 xl:order-1 mt-10 px-4 xl:mt-0 xl:px-0 xl:w-3/5">
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-relaxed text-center xl:text-left mb-4" style={{color: 'white', textShadow: '2px 2px 8px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.5)'}}>
+          <div className="order-1 xl:order-1 mt-20 px-4 xl:mt-0 xl:px-0 xl:w-3/5">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-relaxed text-center xl:text-left mt-10" style={{color: 'white', textShadow: '2px 2px 8px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.5)', lineHeight: '55px'}}>
               {carouselData[currentSlide].text.split(carouselData[currentSlide].highlight).map((part, index) => (
                 <span key={index}>
                   {part}

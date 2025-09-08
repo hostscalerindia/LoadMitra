@@ -53,16 +53,16 @@ const Dashboard = () => {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-4">
               <div className="text-center">
-                <div className="text-2xl font-bold text-blue-600">50K+</div>
-                <div className="text-para text-gray-600">Active Users</div>
+                <div className="text-2xl font-bold text-lightblue">50K+</div>
+                <div className="text-para text-black">Active Users</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-indigo-600">21K+</div>
-                <div className="text-para text-gray-600">Transporters</div>
+                <div className="text-2xl font-bold text-lightblue">21K+</div>
+                <div className="text-para text-black">Transporters</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-purple-600">99.9%</div>
-                <div className="text-para text-gray-600">Uptime</div>
+                <div className="text-2xl font-bold text-lightblue">99.9%</div>
+                <div className="text-para text-black">Uptime</div>
               </div>
             </div>
           </div>

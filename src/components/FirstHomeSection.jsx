@@ -30,14 +30,14 @@ const FirstHomeSection = () => {
   // Carousel images array with corresponding text - Easy to add more images here
   const carouselData = [
     {
-      image: crousal3,
-      text: "Fast, Safe & Smart Local Logistics for Every Business",
-      highlight: "Local Logistics"
-    },
-    {
       image: crousal1,
       text: "Your Trusted Freight Navigator for Reliable Deliveries",
       highlight: "Trusted Navigator"
+    },
+    {
+      image: crousal3,
+      text: "Fast, Safe & Smart Local Logistics for Every Business",
+      highlight: "Local Logistics"
     },
     {
       image: crousal2,
@@ -166,9 +166,9 @@ const FirstHomeSection = () => {
                   )}
                 </span>
               ))}
-            </h1>
-          </div>
-
+              </h1>
+            </div>
+            
           {/* Right side - form */}
           <div className="order-2 xl:order-2 space-y-6 sm:space-y-8 w-full xl:w-2/5">
             
@@ -348,13 +348,13 @@ const FirstHomeSection = () => {
                     <label className="block text-xs font-medium text-gray-700 mb-1">
                       Scheduled Date <span className="text-red-500">*</span>
                     </label>
-                    <input
-                      type="date"
-                      value={formData.scheduledDate}
-                      onChange={(e) => handleInputChange('scheduledDate', e.target.value)}
+                      <input
+                        type="date"
+                        value={formData.scheduledDate}
+                        onChange={(e) => handleInputChange('scheduledDate', e.target.value)}
                       className="w-full px-3 py-2 sm:px-2 sm:py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
-                      required
-                    />
+                        required
+                      />
                   </div>
                 </div>
 

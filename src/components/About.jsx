@@ -35,52 +35,46 @@ const About = () => {
 
 
   return (
-    <div className="pt-10 bg-white relative overflow-hidden">
+    <div className="pt-6 bg-white relative overflow-hidden">
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-
         {/* Features Grid - Hexagon Style */}
-        <div className="mb-24">
-          <h2 className="text-heading font-bold text-center mb-16 text-darkblue">
+        <div className="mb-16">
+          <h2 className="text-heading font-bold text-center mb-12 text-darkblue">
             Why Choose <span className='text-lightblue'>LoadMitra ?</span>
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="group relative rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border-2 border-transparent hover:border-lightblue "
+                className="group relative rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border-2 border-transparent hover:border-lightblue "
               >
                 {/* Gradient Background on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-lightblue/20 to-darkblue/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-lightblue/20 to-darkblue/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                 <div className="relative z-10">
-                  <div className="w-12 h-12 bg-lightblue flex items-center justify-center rounded-xl text-white mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                    {/* Icon size reduced */}
-                    <span className="w-6 h-6 flex items-center justify-center">
+                  <div className="w-10 h-10 bg-lightblue flex items-center justify-center rounded-lg text-white mb-4 group-hover:scale-110 transition-transform duration-300 shadow-md">
+                    <span className="w-5 h-5 flex items-center justify-center">
                       {feature.icon}
                     </span>
                   </div>
-                  <h3 className="text-xl font-bold bg-gradient-to-r from-darkblue to-lightblue bg-clip-text text-transparent mb-4">{feature.title}</h3>
-                  <p className="text-darkblue/80 leading-relaxed">{feature.description}</p>
+                  <h3 className="text-lg font-bold bg-gradient-to-r from-darkblue to-lightblue bg-clip-text text-transparent mb-3">{feature.title}</h3>
+                  <p className="text-darkblue/80 leading-relaxed text-sm">{feature.description}</p>
                 </div>
 
                 {/* Corner Accent */}
-                <div className="absolute top-0 right-0 w-0 h-0 border-l-[30px] border-l-transparent border-t-[30px] border-t-lightblue rounded-tr-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute top-0 right-0 w-0 h-0 border-l-[25px] border-l-transparent border-t-[25px] border-t-lightblue rounded-tr-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
             ))}
           </div>
         </div>
 
         {/* About Content - Split Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
           {/* Left - Content */}
-          <div className="space-y-8">
-            <div className="inline-block bg text-white px-6 py-3 rounded-full text-para font-semibold">
-              About RoadMitra
-            </div>
-
+          <div className="space-y-6">
             <h2 className="text-heading font-bold text-darkblue leading-tight">
               Connecting India's
               <span className="block text-lightblue">Transport Network</span>
@@ -92,28 +86,28 @@ const About = () => {
               seamless cargo movement across the country.
             </p>
 
-            <div className="space-y-4">
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-                  <svg className="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+            <div className="space-y-3">
+              <div className="flex items-center space-x-3">
+                <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                  <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-darkblue">Verified Partners</h4>
-                  <p className="text-para text-gray-600">All transporters are verified and insured</p>
+                  <h4 className="font-semibold text-darkblue text-sm">Verified Partners</h4>
+                  <p className="text-para text-gray-600 text-sm">All transporters are verified and insured</p>
                 </div>
               </div>
 
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                  <svg className="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+              <div className="flex items-center space-x-3">
+                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                  <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-darkblue">Smart Technology</h4>
-                  <p className="text-para text-gray-600">AI-powered route optimization</p>
+                  <h4 className="font-semibold text-darkblue text-sm">Smart Technology</h4>
+                  <p className="text-para text-gray-600 text-sm">AI-powered route optimization</p>
                 </div>
               </div>
             </div>
@@ -123,7 +117,7 @@ const About = () => {
           <div className="relative">
             <div className="relative z-10">
               <div className="relative">
-                <div className="w-full h-96 lg:h-[500px] rounded-3xl shadow-2xl overflow-hidden">
+                <div className="w-full h-80 lg:h-[350px] rounded-2xl shadow-xl overflow-hidden">
                   <div className="w-full h-full flex items-center justify-center">
                     <video
                       src={aiTrackVideo}
@@ -131,33 +125,33 @@ const About = () => {
                       loop
                       muted
                       playsInline
-                      className="w-full h-full object-cover rounded-3xl"
+                      className="w-full h-full object-cover rounded-2xl"
                     />
                   </div>
                 </div>
 
                 {/* Floating Feature Cards */}
-                <div className="absolute -top-8 -right-8 bg-white rounded-2xl p-6 shadow-2xl border border-gray-100">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-                      <svg className="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                <div className="absolute -top-6 -right-6 bg-white rounded-xl p-4 shadow-xl border border-gray-100">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                      <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>
                     </div>
                     <div>
-                      <div className="font-semibold text-gray-900">Live Tracking</div>
+                      <div className="font-semibold text-gray-900 text-sm">Live Tracking</div>
                       <div className="text-xs text-gray-500">Real-time updates</div>
                     </div>
                   </div>
                 </div>
 
-                <div className="absolute -bottom-8 -left-8 bg-white rounded-2xl p-6 shadow-2xl border border-gray-100">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                      <MapPin className="w-6 h-6 text-blue-600" />
+                <div className="absolute -bottom-6 -left-6 bg-white rounded-xl p-4 shadow-xl border border-gray-100">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                      <MapPin className="w-5 h-5 text-blue-600" />
                     </div>
                     <div>
-                      <div className="font-semibold text-gray-900">GPS Enabled</div>
+                      <div className="font-semibold text-gray-900 text-sm">GPS Enabled</div>
                       <div className="text-xs text-gray-500">Precise location</div>
                     </div>
                   </div>
@@ -169,10 +163,10 @@ const About = () => {
       </div>
 
       {/* Hero Section with Diagonal Design */}
-      <div className="relative bg-lightblue py-20 mb-20">
+      <div className="relative bg-lightblue py-16 mb-16">
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-heading font-bold text-white mb-6 leading-tight">
+          <h1 className="text-heading font-bold text-white mb-4 leading-tight">
             Revolutionizing Logistic
           </h1>
           <p className="text-para text-white max-w-3xl mx-auto leading-relaxed">
@@ -180,11 +174,11 @@ const About = () => {
           </p>
 
           {/* Floating Stats Cards */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
             {stats.map((stat, index) => (
-              <div key={index} className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 border border-white/30">
-                <div className="text-3xl font-bold text-white mb-2">{stat.number}</div>
-                <div className="text-white/80 text-para">{stat.label}</div>
+              <div key={index} className="bg-white/20 backdrop-blur-sm rounded-xl p-4 border border-white/30">
+                <div className="text-2xl font-bold text-white mb-1">{stat.number}</div>
+                <div className="text-white/80 text-sm">{stat.label}</div>
               </div>
             ))}
           </div>

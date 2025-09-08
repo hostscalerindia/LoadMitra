@@ -92,42 +92,40 @@ const TransportDirectory = () => {
 
   return (
     <div className="w-full">
-
-      {/* <div className="bg-white/80 backdrop-blur-sm border-b border-gray-200 shadow-sm mb-2">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-4 lg:space-y-0">
-            <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-8">
-              <h1 className="text-subHeading font-bold text-darkblue">Transport Directory</h1>
-              <div className="flex items-center space-x-6 text-xs text-gray-600">
-                <div className="flex items-center space-x-2">
-                  <Users className="w-4 h-4 text-lightblue" />
-                  <span>{transporters.length} Results</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Shield className="w-4 h-4 text-green-500" />
-                  <span>All Verified</span>
-                </div>
-              </div>
+      
+      {/* Mobile Filter Toggle Button */}
+      <div className="lg:hidden mb-4">
+        <div className="flex items-center justify-between bg-white/95 backdrop-blur-sm rounded-xl shadow-lg border border-gray-200 p-3">
+          <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-2">
+              <Users className="w-4 h-4 text-lightblue" />
+              <span className="text-sm font-medium text-gray-700">{transporters.length} Results</span>
             </div>
-
-            <div className="lg:hidden">
-              <button
-                onClick={() => setShowFilters(!showFilters)}
-                className="flex items-center space-x-1.5 px-2.5 py-1 bg-lightblue hover:bg-darkblue text-white font-medium rounded-md shadow-sm hover:shadow-md transition-all duration-300 text-xs relative overflow-hidden group"
-              >
-                <Filter className="w-4 h-4" />
-                <span>Filters</span>
-              </button>
+            <div className="flex items-center space-x-2">
+              <Shield className="w-4 h-4 text-green-500" />
+              <span className="text-sm text-gray-600">All Verified</span>
             </div>
           </div>
+          
+          <button
+            onClick={() => setShowFilters(!showFilters)}
+            className={`flex items-center space-x-2 px-3 py-2 rounded-lg font-medium text-sm transition-all duration-300 ${
+              showFilters 
+                ? 'bg-lightblue text-white shadow-md' 
+                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+            }`}
+          >
+            <Filter className="w-4 h-4" />
+            <span>Filters</span>
+          </button>
         </div>
-      </div> */}
+      </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row space-y-2 lg:space-y-0 lg:space-x-4">
           
           <div className={`lg:w-80 ${showFilters ? 'block' : 'hidden lg:block'}`}>
-            <div className="sticky top-24">
+            <div className="lg:sticky lg:top-24">
               <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
                 <div className="bg-gradient-to-r from-lightblue to-darkblue text-white px-6 py-4">
                   <h3 className="text-subHeading2 font-bold text-white flex items-center space-x-2">
@@ -271,11 +269,11 @@ const TransportDirectory = () => {
         </div>
 
         <div className="flex-1">
-          <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg p-3 mb-2 border border-gray-200">
+          <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg p-3 mb-4 border border-gray-200">
             <div className="flex space-x-1 bg-gray-100 p-1 rounded-lg">
               <button
                 onClick={() => setActiveTab('top-result')}
-                className={`flex-1 py-1.5 px-2.5 rounded-md text-xs font-medium transition-all ${
+                className={`flex-1 py-2 px-3 rounded-md text-sm font-medium transition-all ${
                   activeTab === 'top-result'
                     ? 'bg-gradient-to-r from-lightblue to-darkblue text-white shadow-sm'
                     : 'text-gray-600 hover:text-gray-900'
@@ -285,7 +283,7 @@ const TransportDirectory = () => {
               </button>
               <button
                 onClick={() => setActiveTab('user-rating')}
-                className={`flex-1 py-1.5 px-2.5 rounded-md text-xs font-medium transition-all ${
+                className={`flex-1 py-2 px-3 rounded-md text-sm font-medium transition-all ${
                   activeTab === 'user-rating'
                     ? 'bg-gradient-to-r from-lightblue to-darkblue text-white shadow-sm'
                     : 'text-gray-600 hover:text-gray-900'
@@ -296,10 +294,10 @@ const TransportDirectory = () => {
             </div>
           </div>
 
-          <div className="space-y-2">
+          <div className="space-y-3">
             {transporters.map((transporter) => (
               <div key={transporter.id} className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 overflow-hidden group hover:border-lightblue/30">
-                  <div className="p-3">
+                  <div className="p-4">
                 <div className="flex flex-col lg:flex-row lg:items-start space-y-2 lg:space-y-0 lg:space-x-3">
                   <div className="flex-shrink-0 flex justify-center lg:justify-start">
                         <div className="relative">
@@ -375,16 +373,16 @@ const TransportDirectory = () => {
                       </div>
                     </div>
 
-                    <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-1.5 sm:space-y-0 sm:space-x-2 mt-3 pt-3 border-t border-gray-200">
-                      <button className="flex items-center space-x-1.5 px-2.5 py-1 bg-lightblue hover:bg-darkblue text-white font-medium rounded-md shadow-sm hover:shadow-md transition-all duration-300 text-xs relative overflow-hidden group">
+                    <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-2 sm:space-y-0 sm:space-x-2 mt-4 pt-3 border-t border-gray-200">
+                      <button className="w-full sm:w-auto flex items-center justify-center space-x-2 px-3 py-2 bg-lightblue hover:bg-darkblue text-white font-medium rounded-lg shadow-sm hover:shadow-md transition-all duration-300 text-sm relative overflow-hidden group">
                         <Eye className="w-4 h-4" />
                         <span>View Details</span>
                       </button>
-                      <button className="flex items-center space-x-1.5 px-2.5 py-1 bg-lightblue hover:bg-darkblue text-white font-medium rounded-md shadow-sm hover:shadow-md transition-all duration-300 text-xs relative overflow-hidden group">
+                      <button className="w-full sm:w-auto flex items-center justify-center space-x-2 px-3 py-2 bg-lightblue hover:bg-darkblue text-white font-medium rounded-lg shadow-sm hover:shadow-md transition-all duration-300 text-sm relative overflow-hidden group">
                         <Phone className="w-4 h-4" />
                         <span>Call Now</span>
                       </button>
-                      <button className="flex items-center space-x-1.5 px-2.5 py-1 bg-lightblue hover:bg-darkblue text-white font-medium rounded-md shadow-sm hover:shadow-md transition-all duration-300 text-xs relative overflow-hidden group">
+                      <button className="w-full sm:w-auto flex items-center justify-center space-x-2 px-3 py-2 bg-lightblue hover:bg-darkblue text-white font-medium rounded-lg shadow-sm hover:shadow-md transition-all duration-300 text-sm relative overflow-hidden group">
                         <MessageSquare className="w-4 h-4" />
                         <span>Send Message</span>
                       </button>

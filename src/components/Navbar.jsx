@@ -96,8 +96,8 @@ const Navbar = () => {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
       isScrolled 
-        ? 'bg-white/95 backdrop-blur-md shadow-xl border-b border-gray-200' 
-        : 'bg-transparent backdrop-blur-none shadow-none border-b border-transparent'
+        ? 'bg-white shadow-xl border-b border-gray-200' 
+        : 'bg-white/50 backdrop-blur-sm shadow-none border-b border-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
@@ -107,7 +107,7 @@ const Navbar = () => {
                 <img 
                   src={cutlogo} 
                   alt="LoadMitra Logo" 
-                  className=" absolute h-8 w-12 sm:h-10 sm:w-14 lg:h-12 lg:w-16"
+                  className="hidden sm:block absolute h-8 w-12 sm:h-10 sm:w-14 lg:h-12 lg:w-16"
                   style={{
                     left: '30px',
                     top: '10px',
@@ -115,7 +115,7 @@ const Navbar = () => {
                   }}
                 />
                 <div className="relative">
-                  <h1 className="absolute text-[10px] sm:text-xl lg:text-1xl font-bold left-[25px] top-[-10px] sm:left-[15px] sm:top-0" style={{
+                  <h1 className="absolute text-sm sm:text-xl lg:text-1xl font-bold left-[25px] top-[-10px] sm:left-[15px] sm:top-0" style={{
                     color: 'black',
                     textShadow: '2px 2px 6px rgba(255,255,255,0.9), 0 0 15px rgba(255,255,255,0.7), 0 0 25px rgba(96, 165, 250, 0.3)'
                   }}>

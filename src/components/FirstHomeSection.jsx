@@ -127,10 +127,10 @@ const FirstHomeSection = () => {
           ))}
           
           {/* Overlay */}
-          <div className="absolute inset-0 bg-black/20"></div>
+          <div className="absolute inset-0 bg-black/10"></div>
           
           {/* White Gradient Overlay from Top */}
-          <div className="absolute inset-0 bg-gradient-to-b from-white/100 via-white/20 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-white/10 to-transparent"></div>
           
           
           {/* Dots Indicator */}

@@ -2,20 +2,17 @@ import { track2image } from '../assets'
 
 const Benefits = () => {
   return (
-    <div className="py-24 bg-white">
+    <div className="pt-10 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
-        <div className="text-center mb-16">
-          <h2 className="text-heading font-bold text-darkblue mb-6">
+        <div className="text-center mb-12">
+          <h2 className="text-heading font-bold text-darkblue mb-4">
             Unlock Benefits for Every <span className='text-lightblue'>Stakeholder</span>
           </h2>
-          <p className="text-para text-gray max-w-3xl mx-auto">
-            Empower Riders, Drivers & Staff
-          </p>
         </div>
 
         {/* Two Column Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
           {/* Left Column - Just the Image */}
           <div>
@@ -27,7 +24,7 @@ const Benefits = () => {
           </div>
 
           {/* Right Column - Benefits Text */}
-          <div className="space-y-8">
+          <div className="space-y-6">
             {/* Category Label */}
             <div className="inline-block">
               <span className="bg-darkblue text-white text-para font-semibold px-4 py-2 rounded-full">
@@ -37,11 +34,11 @@ const Benefits = () => {
             
             {/* Main Heading */}
             <h3 className="text-subheading font-bold text-darkblue leading-tight">
-              Share Shuttle Booking & Tracking with Riders
+              Share Truck Booking & Tracking with Riders
             </h3>
             
             {/* Features List */}
-            <div className="space-y-4">
+            <div className="space-y-3">
               <div className="flex items-start space-x-3">
                 <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                   <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">

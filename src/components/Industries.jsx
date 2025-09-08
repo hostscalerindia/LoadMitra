@@ -62,7 +62,7 @@ const Industries = () => {
   }
 
   return (
-    <div className="py-24 bg-lightblue relative overflow-hidden">
+    <div className="py-10 bg-lightblue relative overflow-hidden">
       {/* Background Dot Pattern */}
       <div className="absolute inset-0">
         <img
@@ -75,11 +75,11 @@ const Industries = () => {
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
-        <div className="text-center mb-16">
-          <h2 className="text-heading font-bold text-white mb-6">
+        <div className="text-center mb-12">
+          <h2 className="text-heading font-bold text-white mb-4">
             Driving results in every Industry
           </h2>
-          <div className="w-24 h-0.5 bg-white mx-auto mb-6"></div>
+          <div className="w-24 h-0.5 bg-white mx-auto mb-4"></div>
           <p className="text-para text-white max-w-3xl mx-auto">
             Select your Industry to discover how our platform can help
           </p>
@@ -90,12 +90,12 @@ const Industries = () => {
           {/* Cards Container */}
           <div 
             ref={carouselRef}
-            className="flex space-x-6 overflow-x-auto pb-8 scroll-smooth"
+            className="flex space-x-4 overflow-x-auto pb-6 scroll-smooth"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {industries.map((industry, index) => (
-              <div key={index} className="flex-shrink-0 w-80 bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                <div className="h-48 mb-4 flex items-center justify-center">
+              <div key={index} className="flex-shrink-0 w-80 bg-white rounded-2xl p-5 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                <div className="h-40 mb-3 flex items-center justify-center">
                   {/* Industry Image */}
                   <img
                     src={industry.image}
@@ -109,7 +109,7 @@ const Industries = () => {
           </div>
 
           {/* Pagination Dots */}
-          <div className="flex justify-center space-x-3 mt-8">
+          <div className="flex justify-center space-x-3 mt-6">
             {industries.map((_, index) => (
               <button
                 key={index}

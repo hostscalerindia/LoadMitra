@@ -1,6 +1,6 @@
 const CTA = () => {
   return (
-    <div className="py-24 bg-white relative overflow-hidden">
+    <div className="py-16 bg-white relative overflow-hidden">
       
       {/* Wavy Lines Overlay */}
       {/* <div className="absolute inset-0">
@@ -28,12 +28,12 @@ const CTA = () => {
       {/* Content - Centered */}
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Main Heading */}
-        <h2 className="text-heading font-bold text-darkblue mb-6 leading-tight">
+        <h2 className="text-heading font-bold text-darkblue mb-4 leading-tight">
           Start the Conversation <span className='text-lightblue'>Today</span>
         </h2>
         
         {/* Subheading */}
-        <p className="text-para text-black mb-12 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-para text-black mb-8 max-w-3xl mx-auto leading-relaxed">
           We're ready to understand your needs and provide a tailored solution.
         </p>
         

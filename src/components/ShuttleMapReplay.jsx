@@ -2,38 +2,38 @@ import { movingTruck } from '../assets'
 
 const ShuttleMapReplay = () => {
   return (
-    <div className="py-24 bg-white">
+    <div className="py-10 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Text Content - Centered at Top */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           {/* Main Heading */}
-          <h3 className="text-heading font-bold text-darkblue leading-tight mb-6">
-            Shuttle <span className='text-lightblue'>Replay</span>
+          <h3 className="text-heading font-bold text-darkblue leading-tight mb-4">
+            Truck <span className='text-lightblue'>Replay</span>
           </h3>
           
           {/* Description */}
           <p className="text-para leading-relaxed max-w-4xl mx-auto">
-            Track and replay shuttle routes with real-time monitoring and historical data analysis.
+            Track and replay Truck routes with real-time monitoring and historical data analysis.
           </p>
         </div>
 
         {/* Map Frame with Video */}
         <div className="relative w-full">
           {/* Frame Container */}
-          <div className="relative bg-gray-100 rounded-2xl p-4 shadow-2xl border-4 border-gray-300">
+          <div className="relative bg-gray-100 rounded-2xl p-3 shadow-lg border-2 border-gray-200">
             {/* Top Navigation Bar */}
-            <div className="bg-lightblue rounded-t-xl p-4 mb-4 flex items-center justify-between">
+            <div className="bg-lightblue rounded-t-xl p-3 mb-3 flex items-center justify-between">
               {/* Left - Logo */}
               <div className="flex items-center space-x-3">
-                <span className="text-white font-semibold">Shuttle System</span>
+                <span className="text-white font-semibold">Truck System</span>
               </div>
               
-              {/* Center - Shuttle Replay Button */}
+              {/* Center - Truck Replay Button */}
               <div className="flex items-center space-x-2 bg-white px-6 py-2 rounded-full">
                 <svg className="w-5 h-5 text-lightblue" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M8 5v14l11-7z"/>
                 </svg>
-                <span className="text-lightblue font-semibold">Shuttle Replay</span>
+                <span className="text-lightblue font-semibold">Truck Replay</span>
               </div>
               
               {/* Right - Icons */}
@@ -86,7 +86,7 @@ const ShuttleMapReplay = () => {
                   <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                   </svg>
-                  <span className="text-sm font-semibold text-white">Shuttle Route</span>
+                  <span className="text-sm font-semibold text-white">Truck Route</span>
                 </div>
               </div>
               

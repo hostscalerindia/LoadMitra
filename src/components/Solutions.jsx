@@ -2,7 +2,7 @@ import { ico1, ico2, ico3 } from '../assets'
 
 const Solutions = () => {
   return (
-    <div className="relative py-24 bg-lightblue overflow-hidden">
+    <div className="relative py-10 bg-lightblue overflow-hidden">
       {/* Wavy Background Lines */}
       <div className="absolute inset-0">
         <svg className="w-full h-full" viewBox="0 0 1200 800" preserveAspectRatio="none">
@@ -20,13 +20,13 @@ const Solutions = () => {
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
-        <div className="text-center mb-16">
-          <h2 className="text-heading font-bold text-white mb-6">
+        <div className="text-center mb-12">
+          <h2 className="text-heading font-bold text-white mb-4">
             Flexible Solutions for Every Scenario
           </h2>
           
           {/* Separator Line */}
-          <div className="w-24 h-0.5 bg-white mx-auto mb-6"></div>
+          <div className="w-24 h-0.5 bg-white mx-auto mb-4"></div>
           
           <p className="text-para text-white max-w-3xl mx-auto">
             From Fixed Routes to On-Demand Requests, we've got you covered
@@ -34,13 +34,13 @@ const Solutions = () => {
         </div>
 
         {/* Solution Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           
           {/* Card 1: Fixed-Route Transport */}
-          <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+          <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
             <div className="text-center">
               {/* Icon */}
-              <div className="w-24 h-24 mx-auto mb-6 flex items-center justify-center">
+              <div className="w-20 h-20 mx-auto mb-4 flex items-center justify-center">
                 <img 
                   src={ico1} 
                   alt="Fixed-Route Transport Icon" 
@@ -49,12 +49,12 @@ const Solutions = () => {
               </div>
               
               {/* Title */}
-              <h3 className="text-xl font-bold text-gray-800 mb-4">
+              <h3 className="text-xl font-bold text-gray-800 mb-3">
                 Fixed-Route Transport
               </h3>
               
               {/* Description */}
-              <p className="text-gray-600 mb-6 leading-relaxed">
+              <p className="text-gray-600 mb-4 leading-relaxed">
                 Seamlessly Create Routes and Delight Riders with Tracking.
               </p>
               
@@ -69,10 +69,10 @@ const Solutions = () => {
           </div>
 
           {/* Card 2: On-Demand Transport */}
-          <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+          <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
             <div className="text-center">
               {/* Icon */}
-              <div className="w-24 h-24 mx-auto mb-6 flex items-center justify-center">
+              <div className="w-20 h-20 mx-auto mb-4 flex items-center justify-center">
                 <img 
                   src={ico2} 
                   alt="On-Demand Transport Icon" 
@@ -81,13 +81,13 @@ const Solutions = () => {
               </div>
               
               {/* Title */}
-              <h3 className="text-xl font-bold text-gray-800 mb-4">
+              <h3 className="text-xl font-bold text-gray-800 mb-3">
                 On-Demand Transport
               </h3>
               
               {/* Description */}
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Empower Riders to Book and Track Shuttles from their Smartphones.
+              <p className="text-gray-600 mb-4 leading-relaxed">
+                Empower Riders to Book and Track Truck from their Smartphones.
               </p>
               
               {/* Button */}
@@ -101,10 +101,10 @@ const Solutions = () => {
           </div>
 
           {/* Card 3: Fleet Management */}
-          <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+          <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
             <div className="text-center">
               {/* Icon */}
-              <div className="w-24 h-24 mx-auto mb-6 flex items-center justify-center">
+              <div className="w-20 h-20 mx-auto mb-4 flex items-center justify-center">
                 <img 
                   src={ico3} 
                   alt="Fleet Management Icon" 
@@ -113,12 +113,12 @@ const Solutions = () => {
               </div>
               
               {/* Title */}
-              <h3 className="text-xl font-bold text-gray-800 mb-4">
+              <h3 className="text-xl font-bold text-gray-800 mb-3">
                 Fleet Management
               </h3>
               
               {/* Description */}
-              <p className="text-gray-600 mb-6 leading-relaxed">
+              <p className="text-gray-600 mb-4 leading-relaxed">
                 Optimize Your Fleet Operations with Real-Time Insights and Analytics.
               </p>
               

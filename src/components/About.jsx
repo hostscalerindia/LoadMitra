@@ -56,43 +56,18 @@ const About = () => {
 
   return (
     <div className="bg-white relative overflow-hidden">
-      {/* Hero Section with Diagonal Design */}
-      <div className="relative bg-lightblue py-20 mb-20">
-        <div className="absolute inset-0 bg-black/10"></div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-heading font-bold text-white mb-6 leading-tight">
-            Revolutionizing Logistic
-          </h1>
-          <p className="text-para text-white max-w-3xl mx-auto leading-relaxed">
-            India's most trusted platform connecting shippers with verified transporters
-          </p>
-          
-          {/* Floating Stats Cards */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
-            {stats.map((stat, index) => (
-              <div key={index} className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 border border-white/30">
-                <div className="text-3xl font-bold text-white mb-2">{stat.number}</div>
-                <div className="text-white/80 text-sm">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-        
-        {/* Diagonal Cut */}
-        {/* <div className="absolute bottom-0 left-0 w-full h-0 bg-white transform skew-y-2"></div> */}
-      </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Journey Steps - Compact Timeline */}
-        <div className="mb-16">
+        <div className="mb-10 mt-16">
           <h2 className="text-heading font-bold text-darkblue text-center mb-8">
             Your Journey with <span className='text-lightblue'>LoadMitra</span>
           </h2>
           
           <div className="relative">
-            {/* Connection Line - Only between the 3 steps */}
-            <div className="absolute top-1/2 left-1/4 right-1/4 h-1 bg-darkblue transform -translate-y-1/2 hidden lg:block"></div>
+            {/* Connection Line - Connecting all 3 steps */}
+            <div className="absolute top-[88px] left-[15%] right-[15%] h-1 bg-lightblue hidden lg:block"></div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {journeySteps.map((step, index) => (
@@ -241,6 +216,32 @@ const About = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Hero Section with Diagonal Design */}
+      <div className="relative bg-lightblue py-20 mb-20">
+        <div className="absolute inset-0 bg-black/10"></div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-heading font-bold text-white mb-6 leading-tight">
+            Revolutionizing Logistic
+          </h1>
+          <p className="text-para text-white max-w-3xl mx-auto leading-relaxed">
+            India's most trusted platform connecting shippers with verified transporters
+          </p>
+          
+          {/* Floating Stats Cards */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
+            {stats.map((stat, index) => (
+              <div key={index} className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 border border-white/30">
+                <div className="text-3xl font-bold text-white mb-2">{stat.number}</div>
+                <div className="text-white/80 text-sm">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        {/* Diagonal Cut */}
+        {/* <div className="absolute bottom-0 left-0 w-full h-0 bg-white transform skew-y-2"></div> */}
       </div>
 
       {/* Custom Animations */}

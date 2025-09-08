@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
-import truckImage from '../assets/images/new-image truck.png'
+import crousal1 from '../assets/images/crousal-1.jpg'
+import crousal2 from '../assets/images/crousal-2.jpg'
+import crousal3 from '../assets/images/crousal-3.jpg'
 
 const FirstHomeSection = () => {
   const navigate = useNavigate()
@@ -23,10 +25,54 @@ const FirstHomeSection = () => {
     numTrucks: '',
     scheduledDate: ''
   })
+  const [currentSlide, setCurrentSlide] = useState(0)
+  
+  // Carousel images array with corresponding text - Easy to add more images here
+  const carouselData = [
+    {
+      image: crousal3,
+      text: "Fast, Safe & Smart Local Logistics for Every Business",
+      highlight: "Local Logistics"
+    },
+    {
+      image: crousal1,
+      text: "Your Trusted Freight Navigator for Reliable Deliveries",
+      highlight: "Trusted Navigator"
+    },
+    {
+      image: crousal2,
+      text: "Connecting India’s Transport Network with Modern Solutions",
+      highlight: "Connecting India"
+    }
+  ];
+  
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [location.pathname])
+
+  // Auto-play carousel
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prevSlide) => 
+        prevSlide === carouselData.length - 1 ? 0 : prevSlide + 1
+      )
+    }, 5000) // Change slide every 5 seconds
+
+    return () => clearInterval(interval)
+  }, [carouselData.length])
+
+  const goToSlide = (slideIndex) => {
+    setCurrentSlide(slideIndex)
+  }
+
+  const goToPrevious = () => {
+    setCurrentSlide(currentSlide === 0 ? carouselData.length - 1 : currentSlide - 1)
+  }
+
+  const goToNext = () => {
+    setCurrentSlide(currentSlide === carouselData.length - 1 ? 0 : currentSlide + 1)
+  }
 
   const handleInputChange = (field, value) => {
     setFormData(prev => ({
@@ -61,45 +107,87 @@ const FirstHomeSection = () => {
 
   return (
     <div className="relative min-h-screen bg-white pt-16 sm:pt-20">
+      {/* Carousel Background */}
       <div className="absolute inset-0 overflow-hidden">
-        <img
-          src={truckImage}
-          alt="Transport Truck Background"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute bg-black/20"></div>
+        <div className="relative w-full h-full">
+          {/* Carousel Images */}
+          {carouselData.map((item, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 transition-all duration-1000 ${
+                index === currentSlide ? 'opacity-100 scale-100' : 'opacity-0 scale-110'
+              }`}
+            >
+              <img
+                src={item.image}
+                alt={`Carousel slide ${index + 1}`}
+                className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
+              />
+            </div>
+          ))}
+          
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-black/20"></div>
+          
+          {/* White Gradient Overlay from Top */}
+          <div className="absolute inset-0 bg-gradient-to-b from-white/100 via-white/20 to-transparent"></div>
+          
+          
+          {/* Dots Indicator */}
+          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+            {carouselData.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  index === currentSlide 
+                    ? 'bg-white' 
+                    : 'bg-white/50 hover:bg-white/75'
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 sm:pb-12 lg:pb-16">
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* Left side - image */}
-          <div className="hidden xl:block">
-            
+        <div className="flex flex-col xl:flex-row gap-8 lg:gap-12 items-center">
+          {/* Left side - dynamic text */}
+          <div className="order-1 xl:order-1 mt-10 px-4 xl:mt-0 xl:px-0 xl:w-3/5">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-relaxed text-center xl:text-left mb-4" style={{color: 'white', textShadow: '2px 2px 8px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.5)'}}>
+              {carouselData[currentSlide].text.split(carouselData[currentSlide].highlight).map((part, index) => (
+                <span key={index}>
+                  {part}
+                  {index < carouselData[currentSlide].text.split(carouselData[currentSlide].highlight).length - 1 && (
+                    <span style={{color: '#60A5FA', textShadow: '2px 2px 8px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.5)'}}>
+                      {carouselData[currentSlide].highlight}
+                    </span>
+                  )}
+                </span>
+              ))}
+            </h1>
           </div>
 
-          {/* Right side - form and text */}
-          <div className="space-y-6 sm:space-y-8">
-            <div>
-              <h1 className="text-3xl sm:text-4xl lg:text-heading text-darkblue mb-3 leading-tight text-center xl:text-left">
-                Post Your <span className='text-lightblue'>Load Details</span>
-              </h1>
-              
-              <p className="text-sm sm:text-base lg:text-para text-black max-w-2xl leading-relaxed text-center xl:text-left">
-                Connect with verified transporters and get instant quotes for your cargo. 
-                Choose between Full Load and Part Load options.
-              </p>
-            </div>
+          {/* Right side - form */}
+          <div className="order-2 xl:order-2 space-y-6 sm:space-y-8 w-full xl:w-2/5">
             
-            <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-4 sm:p-5 shadow-xl border border-white/30 max-w-lg mx-auto xl:mx-0">
+            <div className="bg-white/95 mt-[25px] backdrop-blur-sm rounded-2xl p-4 sm:p-5 shadow-xl border border-white/30 w-full">
+              {/* Form Header */}
+              <div className="mb-4 text-center">
+                <h1 className="text-xl sm:text-2xl font-bold text-darkblue mb-2">
+                  Post Your <span className="text-lightblue">Load Details</span>
+                </h1>
+              </div>
               <div className="mb-4">
                 <label className="block text-xs font-medium text-gray-700 mb-2">
                   Load Type <span className="text-red-500">*</span>
                 </label>
-                <div className="flex flex-col sm:flex-row bg-gray-100 rounded-lg p-1 space-y-1 sm:space-y-0">
+                <div className="flex flex-col sm:flex-row bg-gray-100 rounded-lg p-1 space-y-1 sm:space-y-0 sm:gap-2">
                   <button
                     type="button"
                     onClick={() => setLoadType('full-load')}
-                    className={`flex-1 py-2 px-3 rounded-md text-xs font-medium transition-all ${
+                    className={`flex-1 py-1.5 px-2 rounded-md text-xs font-medium transition-all ${
                       loadType === 'full-load'
                         ? 'bg-blue-600 text-white shadow-sm'
                         : 'text-gray-600 hover:text-gray-900'
@@ -110,7 +198,7 @@ const FirstHomeSection = () => {
                   <button
                     type="button"
                     onClick={() => setLoadType('part-load')}
-                    className={`flex-1 py-2 px-3 rounded-md text-xs font-medium transition-all ${
+                    className={`flex-1 py-1.5 px-2 rounded-md text-xs font-medium transition-all ${
                       loadType === 'part-load'
                         ? 'bg-blue-600 text-white shadow-sm'
                         : 'text-gray-600 hover:text-gray-900'
@@ -132,7 +220,7 @@ const FirstHomeSection = () => {
                       value={formData.from}
                       onChange={(e) => handleInputChange('from', e.target.value)}
                       placeholder="Source City"
-                      className="w-full px-3 py-2 sm:px-2 sm:py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                      className="w-full px-2 py-1.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-xs"
                       required
                     />
                   </div>
@@ -145,38 +233,12 @@ const FirstHomeSection = () => {
                       value={formData.to}
                       onChange={(e) => handleInputChange('to', e.target.value)}
                       placeholder="Destination City"
-                      className="w-full px-3 py-2 sm:px-2 sm:py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                      className="w-full px-2 py-1.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-xs"
                       required
                     />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-2">
-                  <div>
-                    <label className="block text-xs font-medium text-gray-700 mb-1">
-                      Source Pin Code
-                    </label>
-                    <input
-                      type="text"
-                      value={formData.sourcePinCode}
-                      onChange={(e) => handleInputChange('sourcePinCode', e.target.value)}
-                      placeholder="From Pin Code"
-                      className="w-full px-3 py-2 sm:px-2 sm:py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-xs font-medium text-gray-700 mb-1">
-                      Destination Pin Code
-                    </label>
-                    <input
-                      type="text"
-                      value={formData.destinationPinCode}
-                      onChange={(e) => handleInputChange('destinationPinCode', e.target.value)}
-                      placeholder="Destination Pin Code"
-                      className="w-full px-3 py-2 sm:px-2 sm:py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
-                    />
-                  </div>
-                </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-2">
                   <div>
@@ -286,23 +348,13 @@ const FirstHomeSection = () => {
                     <label className="block text-xs font-medium text-gray-700 mb-1">
                       Scheduled Date <span className="text-red-500">*</span>
                     </label>
-                    <div className="flex">
-                      <input
-                        type="date"
-                        value={formData.scheduledDate}
-                        onChange={(e) => handleInputChange('scheduledDate', e.target.value)}
-                        className="flex-1 px-3 py-2 sm:px-2 sm:py-1 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
-                        required
-                      />
-                      <button
-                        type="button"
-                        className="px-3 py-2 sm:px-2 sm:py-1 bg-orange-500 text-white rounded-r-md hover:bg-orange-600 transition-colors"
-                      >
-                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
-                        </svg>
-                      </button>
-                    </div>
+                    <input
+                      type="date"
+                      value={formData.scheduledDate}
+                      onChange={(e) => handleInputChange('scheduledDate', e.target.value)}
+                      className="w-full px-3 py-2 sm:px-2 sm:py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                      required
+                    />
                   </div>
                 </div>
 

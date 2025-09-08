@@ -91,15 +91,14 @@ const TransportDirectory = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-lightblue/5 via-white to-darkblue/5">
-      {/* Header Section */}
-      <div className="bg-white border-b border-gray-100 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div className="w-full">
+
+      {/* <div className="bg-white/80 backdrop-blur-sm border-b border-gray-200 shadow-sm mb-2">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-4 lg:space-y-0">
-            {/* Title and Stats */}
             <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-8">
-              <h1 className="text-2xl font-bold text-lightblue">Transport Directory</h1>
-              <div className="flex items-center space-x-6 text-sm text-gray-600">
+              <h1 className="text-subHeading font-bold text-darkblue">Transport Directory</h1>
+              <div className="flex items-center space-x-6 text-xs text-gray-600">
                 <div className="flex items-center space-x-2">
                   <Users className="w-4 h-4 text-lightblue" />
                   <span>{transporters.length} Results</span>
@@ -111,39 +110,35 @@ const TransportDirectory = () => {
               </div>
             </div>
 
-            {/* Mobile Filter Toggle */}
-      <div className="lg:hidden">
-        <button
-          onClick={() => setShowFilters(!showFilters)}
-                className="flex items-center space-x-2 px-4 py-2 bg-lightblue text-white rounded-lg hover:bg-darkblue transition-colors duration-300"
+            <div className="lg:hidden">
+              <button
+                onClick={() => setShowFilters(!showFilters)}
+                className="flex items-center space-x-1.5 px-2.5 py-1 bg-lightblue hover:bg-darkblue text-white font-medium rounded-md shadow-sm hover:shadow-md transition-all duration-300 text-xs relative overflow-hidden group"
               >
                 <Filter className="w-4 h-4" />
                 <span>Filters</span>
-        </button>
+              </button>
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="flex flex-col lg:flex-row space-y-8 lg:space-y-0 lg:space-x-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col lg:flex-row space-y-2 lg:space-y-0 lg:space-x-4">
           
-          {/* Left Sidebar - Filters */}
           <div className={`lg:w-80 ${showFilters ? 'block' : 'hidden lg:block'}`}>
             <div className="sticky top-24">
-              <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-                {/* Filter Header */}
-                <div className="bg-lightblue text-white px-6 py-4">
-                  <h3 className="text-lg font-bold text-white flex items-center space-x-2">
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
+                <div className="bg-gradient-to-r from-lightblue to-darkblue text-white px-6 py-4">
+                  <h3 className="text-subHeading2 font-bold text-white flex items-center space-x-2">
                     <Filter className="w-5 h-5" />
                     <span>Smart Filters</span>
                   </h3>
-      </div>
+                </div>
 
-                <div className="p-6 space-y-6">
-                  {/* Search Bar */}
+                <div className="p-3 space-y-3">
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-3">Quick Search</label>
+                    <label className="block text-xs font-semibold text-gray-700 mb-2">Quick Search</label>
                     <div className="relative">
                       <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
               <input
@@ -151,15 +146,14 @@ const TransportDirectory = () => {
                         placeholder="Company name, location..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                        className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-lightblue focus:border-transparent transition-all duration-300"
+                        className="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-lightblue focus:border-transparent transition-all duration-300 text-sm"
               />
             </div>
           </div>
 
-          {/* Category Selection */}
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-3">Category</label>
-                    <div className="space-y-3">
+                    <label className="block text-xs font-semibold text-gray-700 mb-2">Category</label>
+                    <div className="space-y-2">
                       {categories.map((category) => {
                         const IconComponent = category.icon
                         return (
@@ -187,10 +181,9 @@ const TransportDirectory = () => {
             </div>
           </div>
 
-          {/* Transporter Types */}
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-3">Transporter Type</label>
-                    <div className="space-y-3">
+                    <label className="block text-xs font-semibold text-gray-700 mb-2">Transporter Type</label>
+                    <div className="space-y-2">
                       {transporterTypes.map((type) => {
                         const IconComponent = type.icon
                         return (
@@ -216,25 +209,23 @@ const TransportDirectory = () => {
             </div>
           </div>
 
-                  {/* Location Search */}
                 <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-3">Location</label>
-                    <div className="space-y-3">
+                    <label className="block text-xs font-semibold text-gray-700 mb-2">Location</label>
+                    <div className="space-y-2">
                       <div className="relative">
                         <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
                   <input
                     type="text"
                           placeholder="City, State, or PIN"
-                          className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-lightblue focus:border-transparent transition-all duration-300"
+                          className="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-lightblue focus:border-transparent transition-all duration-300 text-sm"
                   />
                 </div>
                   </div>
                 </div>
 
-                {/* Rating Filter */}
                 <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-3">Minimum Rating</label>
-                    <div className="space-y-2">
+                    <label className="block text-xs font-semibold text-gray-700 mb-2">Minimum Rating</label>
+                    <div className="space-y-1">
                     {[4.5, 4.0, 3.5, 3.0].map((rating) => (
                       <label key={rating} className="flex items-center space-x-3 cursor-pointer group">
                           <input
@@ -263,14 +254,13 @@ const TransportDirectory = () => {
                   </div>
                 </div>
 
-                  {/* Action Buttons */}
-                  <div className="space-y-3 pt-4">
-                    <button className="w-full bg-gradient-to-r from-lightblue to-darkblue text-white font-semibold py-3 px-6 rounded-xl hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                  <div className="space-y-2 pt-3">
+                    <button className="w-full bg-lightblue hover:bg-darkblue text-white font-medium py-1.5 px-3 rounded-md shadow-sm hover:shadow-md transition-all duration-300 text-xs relative overflow-hidden group">
                   Apply Filters
                 </button>
                     <button
                       onClick={clearFilters}
-                      className="w-full py-3 px-6 bg-gray-100 text-gray-700 rounded-xl hover:bg-gray-200 transition-colors font-medium"
+                      className="w-full py-1.5 px-3 bg-gray-100 text-gray-700 rounded-md hover:bg-gray-200 transition-colors font-medium text-xs"
                     >
                       Clear All
                     </button>
@@ -280,46 +270,41 @@ const TransportDirectory = () => {
           </div>
         </div>
 
-        {/* Right Content - Results */}
-          <div className="flex-1">
-          {/* Result Tabs */}
-          <div className="bg-white rounded-2xl shadow-lg p-6 mb-6 border border-gray-100">
+        <div className="flex-1">
+          <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg p-3 mb-2 border border-gray-200">
             <div className="flex space-x-1 bg-gray-100 p-1 rounded-lg">
               <button
                 onClick={() => setActiveTab('top-result')}
-                className={`flex-1 py-3 px-4 rounded-md text-sm font-medium transition-all ${
+                className={`flex-1 py-1.5 px-2.5 rounded-md text-xs font-medium transition-all ${
                   activeTab === 'top-result'
-                      ? 'bg-lightblue text-white shadow-sm'
+                    ? 'bg-gradient-to-r from-lightblue to-darkblue text-white shadow-sm'
                     : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
-                  Top Results
+                Top Results
               </button>
               <button
                 onClick={() => setActiveTab('user-rating')}
-                className={`flex-1 py-3 px-4 rounded-md text-sm font-medium transition-all ${
+                className={`flex-1 py-1.5 px-2.5 rounded-md text-xs font-medium transition-all ${
                   activeTab === 'user-rating'
-                      ? 'bg-lightblue text-white shadow-sm'
+                    ? 'bg-gradient-to-r from-lightblue to-darkblue text-white shadow-sm'
                     : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
-                  Highest Rated
+                Highest Rated
               </button>
             </div>
           </div>
 
-            {/* Transporter Listings */}
-            <div className="space-y-6">
+          <div className="space-y-2">
             {transporters.map((transporter) => (
-                <div key={transporter.id} className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden group">
-                  <div className="p-6">
-                    {/* Header Section */}
-                <div className="flex flex-col lg:flex-row lg:items-start space-y-4 lg:space-y-0 lg:space-x-6">
-                      {/* Profile Section */}
+              <div key={transporter.id} className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 overflow-hidden group hover:border-lightblue/30">
+                  <div className="p-3">
+                <div className="flex flex-col lg:flex-row lg:items-start space-y-2 lg:space-y-0 lg:space-x-3">
                   <div className="flex-shrink-0 flex justify-center lg:justify-start">
                         <div className="relative">
-                          <div className="w-20 h-20 bg-gradient-to-br from-lightblue to-darkblue rounded-2xl flex items-center justify-center shadow-lg">
-                            <span className="text-white text-2xl font-bold">
+                          <div className="w-16 h-16 bg-gradient-to-br from-lightblue to-darkblue rounded-xl flex items-center justify-center shadow-md">
+                            <span className="text-white text-lg font-bold">
                           {transporter.name.charAt(0)}
                         </span>
                       </div>
@@ -331,17 +316,15 @@ const TransportDirectory = () => {
                     </div>
                   </div>
 
-                      {/* Content Section */}
                   <div className="flex-1 min-w-0 text-center lg:text-left">
-                    <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between space-y-4 lg:space-y-0">
+                    <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between space-y-2 lg:space-y-0">
                       <div className="flex-1">
-                            <h3 className="text-xl font-bold text-darkblue mb-2 group-hover:text-lightblue transition-colors">
+                            <h3 className="text-subHeading2 font-bold text-darkblue mb-2 group-hover:text-lightblue transition-colors">
                               {transporter.name}
                             </h3>
-                            <p className="text-lg text-gray-700 mb-3 font-medium">{transporter.company}</p>
+                            <p className="text-para text-gray-700 mb-3 font-medium">{transporter.company}</p>
                             
-                            {/* Company Details */}
-                            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 text-sm text-gray-600 mb-4">
+                            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 text-xs text-gray-600 mb-3">
                               <div className="flex items-center space-x-2">
                                 <Users className="w-4 h-4 text-lightblue" />
                                 <span>{transporter.contactPerson}</span>
@@ -356,20 +339,17 @@ const TransportDirectory = () => {
                               </div>
                             </div>
 
-                            {/* Speciality */}
-                            <div className="inline-block bg-lightblue/10 text-lightblue px-3 py-1 rounded-full text-sm font-medium mb-3">
+                            <div className="inline-block bg-lightblue/10 text-lightblue px-2 py-1 rounded-full text-xs font-medium mb-2">
                               {transporter.speciality}
                             </div>
 
-                            <div className="flex items-center justify-center lg:justify-start space-x-2 text-sm text-gray-500 mb-3">
+                            <div className="flex items-center justify-center lg:justify-start space-x-2 text-xs text-gray-500 mb-2">
                               <MapPin className="w-4 h-4 text-gray-400" />
                               <span>{transporter.address}</span>
                         </div>
                       </div>
 
-                          {/* Rating and Actions */}
-                          <div className="flex flex-col items-center lg:items-end space-y-4">
-                            {/* Rating */}
+                          <div className="flex flex-col items-center lg:items-end space-y-2">
                         <div className="flex items-center space-x-1">
                           {[...Array(5)].map((_, i) => (
                                 <Star
@@ -381,36 +361,34 @@ const TransportDirectory = () => {
                               }`}
                                 />
                           ))}
-                              <span className="text-sm text-gray-600 ml-2 font-semibold">
+                              <span className="text-xs text-gray-600 ml-2 font-semibold">
                                 {transporter.rating}
                               </span>
                         </div>
                         
-                            {/* Verification Badge */}
                         {transporter.verified && (
                           <div className="flex items-center space-x-2 text-green-600 bg-green-50 px-3 py-1 rounded-full">
                                 <CheckCircle className="w-4 h-4" />
-                                <span className="text-xs font-medium">Verified Partner</span>
+                                <span className="text-xs font-medium">Verified</span>
                           </div>
                         )}
                       </div>
                     </div>
 
-                    {/* Action Buttons */}
-                        <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-3 sm:space-y-0 sm:space-x-3 mt-6 pt-6 border-t border-gray-100">
-                          <button className="flex items-center space-x-2 px-6 py-3 bg-lightblue text-white rounded-xl hover:bg-darkblue transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-                            <Eye className="w-4 h-4" />
-                            <span>View Details</span>
+                    <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-1.5 sm:space-y-0 sm:space-x-2 mt-3 pt-3 border-t border-gray-200">
+                      <button className="flex items-center space-x-1.5 px-2.5 py-1 bg-lightblue hover:bg-darkblue text-white font-medium rounded-md shadow-sm hover:shadow-md transition-all duration-300 text-xs relative overflow-hidden group">
+                        <Eye className="w-4 h-4" />
+                        <span>View Details</span>
                       </button>
-                          <button className="flex items-center space-x-2 px-6 py-3 bg-green-500 text-white rounded-xl hover:bg-green-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-                            <Phone className="w-4 h-4" />
-                            <span>Call Now</span>
+                      <button className="flex items-center space-x-1.5 px-2.5 py-1 bg-lightblue hover:bg-darkblue text-white font-medium rounded-md shadow-sm hover:shadow-md transition-all duration-300 text-xs relative overflow-hidden group">
+                        <Phone className="w-4 h-4" />
+                        <span>Call Now</span>
                       </button>
-                          <button className="flex items-center space-x-2 px-6 py-3 bg-orange-500 text-white rounded-xl hover:bg-orange-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-                            <MessageSquare className="w-4 h-4" />
-                            <span>Send Message</span>
+                      <button className="flex items-center space-x-1.5 px-2.5 py-1 bg-lightblue hover:bg-darkblue text-white font-medium rounded-md shadow-sm hover:shadow-md transition-all duration-300 text-xs relative overflow-hidden group">
+                        <MessageSquare className="w-4 h-4" />
+                        <span>Send Message</span>
                       </button>
-                        </div>
+                    </div>
                     </div>
                   </div>
                 </div>

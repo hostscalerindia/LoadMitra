@@ -2,12 +2,12 @@ import { videoGirl } from '../assets'
 
 const LiveDisplay = () => {
   return (
-    <div className="py-24 bg-white">
+    <div className="py-10 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Text Content - Centered at Top */}
-        <div className="text-center mb-16">          
+        <div className="text-center mb-12">          
           {/* Main Heading */}
-          <h3 className="text-heading font-bold text-darkblue leading-tight mb-6">
+          <h3 className="text-heading font-bold text-darkblue leading-tight mb-4">
             Live <span className='text-lightblue'>Display</span>
           </h3>
           

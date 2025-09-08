@@ -7,7 +7,7 @@ const About = () => {
           <h1 className="text-6xl font-bold text-neutral-800 leading-tight mb-6">
             <span className="block">About</span>
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600">
-              TrackMyShuttle
+              TrackMyTruck
             </span>
           </h1>
         </div>
@@ -17,13 +17,13 @@ const About = () => {
           <div className="bg-white rounded-2xl p-12 shadow-medium border border-neutral-100">
             <h2 className="text-3xl font-semibold text-neutral-800 mb-6">Our Mission</h2>
             <p className="text-lg text-neutral-600 leading-relaxed mb-8">
-              TrackMyShuttle is dedicated to revolutionizing the way people track and manage shuttle services. 
+              TrackMyTruck is dedicated to revolutionizing the way people track and manage Truck services. 
               We believe that real-time information and seamless user experience are key to modern transportation.
             </p>
             
             <h3 className="text-2xl font-semibold text-neutral-800 mb-4">What We Do</h3>
             <p className="text-lg text-neutral-600 leading-relaxed mb-8">
-              Our platform provides comprehensive shuttle tracking solutions for various industries including 
+              Our platform provides comprehensive Truck tracking solutions for various industries including 
               hotels, resorts, theme parks, corporate offices, and educational institutions. We ensure that 
               every journey is transparent, reliable, and efficient.
             </p>

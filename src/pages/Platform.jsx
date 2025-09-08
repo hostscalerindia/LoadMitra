@@ -22,7 +22,7 @@ const Platform = () => {
               </svg>
             </div>
             <h3 className="text-xl font-semibold text-neutral-800 mb-3">Dashboard</h3>
-            <p className="text-neutral-600 text-para">Comprehensive overview of all shuttle operations</p>
+            <p className="text-neutral-600 text-para">Comprehensive overview of all Truck operations</p>
           </div>
 
           {/* Analytics */}

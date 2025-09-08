@@ -77,7 +77,7 @@ const Banner = () => {
           <div className="space-y-8">
             {/* Main Heading */}
             <div>
-              <h1 className="text-heading  text-darkblue mb-6 leading-tight">
+              <h1 className="text-heading  dartext-kblue mb-6 leading-tight">
                 Post Your Load Details
               </h1>
               
@@ -148,34 +148,6 @@ const Banner = () => {
                       placeholder="Destination City"
                       className="w-full px-2.5 py-1.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-para"
                       required
-                    />
-                  </div>
-                </div>
-
-                {/* Row 2: Pin Codes */}
-                <div className="grid grid-cols-2 gap-2">
-                  <div>
-                    <label className="block text-xs font-medium text-gray-700 mb-1">
-                      Source Pin Code
-                    </label>
-                    <input
-                      type="text"
-                      value={formData.sourcePinCode}
-                      onChange={(e) => handleInputChange('sourcePinCode', e.target.value)}
-                      placeholder="From Pin Code"
-                      className="w-full px-2.5 py-1.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-para"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-xs font-medium text-gray-700 mb-1">
-                      Destination Pin Code
-                    </label>
-                    <input
-                      type="text"
-                      value={formData.destinationPinCode}
-                      onChange={(e) => handleInputChange('destinationPinCode', e.target.value)}
-                      placeholder="Destination Pin Code"
-                      className="w-full px-2.5 py-1.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-para"
                     />
                   </div>
                 </div>

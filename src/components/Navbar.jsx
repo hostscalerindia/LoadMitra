@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { logoimage } from '../assets'
+import cutlogo from '../assets/images/cutlogo.png'
 
 const Navbar = () => {
   const [activeDropdown, setActiveDropdown] = useState(null)
@@ -96,30 +97,47 @@ const Navbar = () => {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
       isScrolled 
         ? 'bg-white/95 backdrop-blur-md shadow-xl border-b border-gray-200' 
-        : 'bg-transparent backdrop-blur-md border-b border-white/20'
+        : 'bg-transparent backdrop-blur-none shadow-none border-b border-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center">
             <Link to="/" className="flex items-center cursor-pointer" onClick={closeMobileMenu}>
-              <img 
-                src={logoimage} 
-                alt="LoadMitra Logo" 
-                className="h-[140px] w-[140px]"
-              />
+              <div className="flex items-center space-x-3">
+                <img 
+                  src={cutlogo} 
+                  alt="LoadMitra Logo" 
+                  className=" absolute h-8 w-12 sm:h-10 sm:w-14 lg:h-12 lg:w-16"
+                  style={{
+                    left: '30px',
+                    top: '10px',
+                    textShadow: '2px 2px 6px rgba(255,255,255,0.9), 0 0 15px rgba(255,255,255,0.7), 0 0 25px rgba(96, 165, 250, 0.3)'
+                  }}
+                />
+                <div className="relative">
+                  <h1 className="absolute text-lg sm:text-xl lg:text-1xl font-bold" style={{
+                    color: 'black',
+                    left: '15px',
+                    top: '0px',
+                    textShadow: '2px 2px 6px rgba(255,255,255,0.9), 0 0 15px rgba(255,255,255,0.7), 0 0 25px rgba(96, 165, 250, 0.3)'
+                  }}>
+                    LOAD<span style={{color: '#60A5FA', textShadow: '2px 2px 6px rgba(255,255,255,0.9), 0 0 15px rgba(255,255,255,0.7), 0 0 25px rgba(96, 165, 250, 0.5)'}}>MITRA</span>
+                  </h1>
+                </div>
+              </div>
             </Link>
           </div>
 
           <div className="hidden lg:flex items-center space-x-2">
             <Link 
               to="/" 
-              className={`px-3 py-2 text-sm font-normal transition-all duration-300 hover:scale-105 relative group rounded-lg ${
+              className={`px-2 py-1.5 text-sm font-medium transition-all duration-300 hover:scale-105 relative group rounded-md ${
                 isActive('/') 
-                  ? 'text-blue-600 bg-blue-50 shadow-md border-2 border-blue-300 ring-2 ring-blue-200' 
-                  : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50/70 hover:border-blue-200 hover:shadow-sm'
+                  ? 'text-white bg-lightblue shadow-lg border border-darkblue' 
+                  : 'text-gray-700 hover:text-lightblue hover:bg-lightblue/10 hover:border-lightblue/30 hover:shadow-sm'
               }`}
             >
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-1">
                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                 </svg>
@@ -129,13 +147,13 @@ const Navbar = () => {
 
             <Link 
               to="/track" 
-              className={`px-3 py-2 text-sm font-normal transition-all duration-300 hover:scale-105 relative group rounded-lg ${
+              className={`px-2 py-1.5 text-sm font-medium transition-all duration-300 hover:scale-105 relative group rounded-md ${
                 isActive('/track') 
-                  ? 'text-blue-600 bg-blue-50 shadow-md border-2 border-blue-300 ring-2 ring-blue-200' 
-                  : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50/70 hover:border-blue-200 hover:shadow-sm'
+                  ? 'text-white bg-lightblue shadow-lg border border-darkblue' 
+                  : 'text-gray-700 hover:text-lightblue hover:bg-lightblue/10 hover:border-lightblue/30 hover:shadow-sm'
               }`}
             >
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-1">
                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4-2V5l-4-2m-6 4V4l4 2" />
                 </svg>
@@ -145,13 +163,13 @@ const Navbar = () => {
 
             <Link 
               to="/directory" 
-              className={`px-3 py-2 text-sm font-normal transition-all duration-300 hover:scale-105 relative group rounded-lg ${
+              className={`px-2 py-1.5 text-sm font-medium transition-all duration-300 hover:scale-105 relative group rounded-md ${
                 isActive('/directory') 
-                  ? 'text-blue-600 bg-blue-50 shadow-md border-2 border-blue-300 ring-2 ring-blue-200' 
-                  : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50/70 hover:border-blue-200 hover:shadow-sm'
+                  ? 'text-white bg-lightblue shadow-lg border border-darkblue' 
+                  : 'text-gray-700 hover:text-lightblue hover:bg-lightblue/10 hover:border-lightblue/30 hover:shadow-sm'
               }`}
             >
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-1">
                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                 </svg>
@@ -240,14 +258,18 @@ const Navbar = () => {
       <div className={`lg:hidden transition-all duration-300 ease-in-out overflow-hidden ${
         isMobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
       }`}>
-        <div className="bg-white/95 backdrop-blur-md border-t border-gray-200 shadow-lg">
+        <div className={`border-t shadow-lg transition-all duration-500 ${
+          isScrolled 
+            ? 'bg-white/95 backdrop-blur-md border-gray-200' 
+            : 'bg-white/10 backdrop-blur-lg border-white/20'
+        }`}>
           <div className="px-4 pt-2 pb-6 space-y-4">
             <Link 
               to="/" 
-              className={`block px-4 py-2.5 text-sm font-normal rounded-lg transition-all duration-300 ${
+              className={`block px-3 py-2 text-sm font-medium rounded-md transition-all duration-300 ${
                 isActive('/') 
-                  ? 'text-blue-600 bg-blue-50 border-2 border-blue-300 ring-2 ring-blue-200 shadow-md' 
-                  : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50/70 hover:border-blue-200'
+                  ? 'text-white bg-lightblue border border-darkblue shadow-lg' 
+                  : 'text-gray-700 hover:text-lightblue hover:bg-lightblue/10 hover:border-lightblue/30'
               }`}
               onClick={closeMobileMenu}
             >
@@ -261,10 +283,10 @@ const Navbar = () => {
 
             <Link 
               to="/track" 
-              className={`block px-4 py-2.5 text-sm font-normal rounded-lg transition-all duration-300 ${
+              className={`block px-3 py-2 text-sm font-medium rounded-md transition-all duration-300 ${
                 isActive('/track') 
-                  ? 'text-blue-600 bg-blue-50 border-2 border-blue-300 ring-2 ring-blue-200 shadow-md' 
-                  : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50/70 hover:border-blue-200'
+                  ? 'text-white bg-lightblue border border-darkblue shadow-lg' 
+                  : 'text-gray-700 hover:text-lightblue hover:bg-lightblue/10 hover:border-lightblue/30'
               }`}
               onClick={closeMobileMenu}
             >
@@ -278,10 +300,10 @@ const Navbar = () => {
 
             <Link 
               to="/directory" 
-              className={`block px-4 py-2.5 text-sm font-normal rounded-lg transition-all duration-300 ${
+              className={`block px-3 py-2 text-sm font-medium rounded-md transition-all duration-300 ${
                 isActive('/directory') 
-                  ? 'text-blue-600 bg-blue-50 border-2 border-blue-300 ring-2 ring-blue-200 shadow-md' 
-                  : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50/70 hover:border-blue-200'
+                  ? 'text-white bg-lightblue border border-darkblue shadow-lg' 
+                  : 'text-gray-700 hover:text-lightblue hover:bg-lightblue/10 hover:border-lightblue/30'
               }`}
               onClick={closeMobileMenu}
             >

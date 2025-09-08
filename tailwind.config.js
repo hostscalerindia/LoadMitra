@@ -8,34 +8,34 @@ export default {
     extend: {
       fontSize: {
         heading: {
-          xs: '1.25rem',   // ~20px
-          sm: '1.5rem',    // ~24px
-          md: '2rem',      // ~32px
-          lg: '2.25rem',   // ~36px
-          xl: '2.5rem',    // ~40px
+          xs: '1.1rem',   // ~17.6px
+          sm: '1.3rem',    // ~20.8px
+          md: '1.7rem',      // ~27.2px
+          lg: '1.9rem',   // ~30.4px
+          xl: '2.1rem',    // ~33.6px
           
         },
         subHeading: {
-          xs: '1rem',
-          sm: '1.2rem',
-          md: '1.4rem',
-          lg: '1.5rem',
-          xl: '1.8rem',
+          xs: '0.9rem',
+          sm: '1rem',
+          md: '1.2rem',
+          lg: '1.3rem',
+          xl: '1.5rem',
         },
         subHeading2: {
-          xs: '1rem',
-          sm: '1.2rem',
-          md: '1.4rem',
-          lg: '1.5rem',
-          xl: '1.6rem',
+          xs: '0.9rem',
+          sm: '1rem',
+          md: '1.2rem',
+          lg: '1.3rem',
+          xl: '1.4rem',
           // '2xl': '1.7rem'
         },
         para: {
-          xs: '0.9rem',
-          sm: '1rem',
-          md: '1.1rem',
-          lg: '1.2rem',
-          xl: '1.3rem',
+          xs: '0.8rem',
+          sm: '0.9rem',
+          md: '1rem',
+          lg: '1.1rem',
+          xl: '1.2rem',
           // '2xl': '1.4rem'
         },
       },

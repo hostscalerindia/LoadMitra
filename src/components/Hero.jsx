@@ -27,17 +27,17 @@ const Hero = () => {
       
       {/* Content Overlay */}
       <div className="relative z-10 min-h-screen flex items-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 w-full">
           
           {/* Text Content - Left Side */}
-          <div className="max-w-2xl space-y-8 text-white">
+          <div className="max-w-2xl space-y-6 text-white">
             {/* Main Heading */}
             <h1 className="text-heading text-black font-bold leading-tight drop-shadow-lg">
               <span className="block">Deliver what Riders want: <span className='text-lightblue'>Live Tracking & Easy Booking</span></span>
             </h1>
             
             {/* Subheadings */}
-            <div className="space-y-4">
+            <div className="space-y-3">
               <p className="text-para text-black leading-relaxed drop-shadow-md">
                 Live Tracking & Easy Booking for Riders. Automated Tools for Drivers and Staff.
               </p>

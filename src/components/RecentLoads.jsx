@@ -60,52 +60,50 @@ const RecentLoads = () => {
           </p>
         </div>
 
-                 {/* Recent Loads Section */}
-         <div className="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-lg">
-          <div className="bg-white px-6 py-4 border-b border-gray-200">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-end">
-              <button className="bg-darkpink hover:bg-pink-600 text-white px-4 py-2 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 border border-white/20 relative overflow-hidden group">
-                <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-                <div className="relative z-10">View all load posts</div>
+        {/* Recent Loads Section */}
+        <div className="bg-white/95 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-200 shadow-lg">
+          {/* <div className="bg-gradient-to-r from-lightblue/10 to-darkblue/10 px-4 py-3 border-b border-gray-200">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+              <h3 className="text-lg font-semibold text-darkblue mb-2 sm:mb-0">Recent Load Posts</h3>
+              <button className="bg-lightblue hover:bg-darkblue text-white px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-300">
+                View All Posts
               </button>
             </div>
-          </div>
+          </div> */}
 
           <div className="overflow-x-auto">
-            <table className="w-full border-collapse">
-              <thead className="bg-gradient-to-r from-gray-50 to-gray-100">
-                <tr className="border-b-2 border-gray-300">
-                  <th className="px-6 py-3 text-left text-xs font-bold text-gray-700 uppercase tracking-wider border-r border-gray-200">Source City</th>
-                  <th className="px-6 py-3 text-left text-xs font-bold text-gray-700 uppercase tracking-wider border-r border-gray-200">Destination City</th>
-                  <th className="px-6 py-3 text-left text-xs font-bold text-gray-700 uppercase tracking-wider border-r border-gray-200">Distance</th>
-                  <th className="px-6 py-3 text-left text-xs font-bold text-gray-700 uppercase tracking-wider border-r border-gray-200">Weight (MT)</th>
-                  <th className="px-6 py-3 text-left text-xs font-bold text-gray-700 uppercase tracking-wider border-r border-gray-200">Schd. Date</th>
-                  <th className="px-6 py-3 text-left text-xs font-bold text-gray-700 uppercase tracking-wider border-r border-gray-200">Material</th>
-                  <th className="px-6 py-3 text-left text-xs font-bold text-gray-700 uppercase tracking-wider border-r border-gray-200">Truck Type</th>
-                  <th className="px-6 py-3 text-left text-xs font-bold text-gray-700 uppercase tracking-wider border-r border-gray-200">Posted By</th>
-                  <th className="px-6 py-3 text-left text-xs font-bold text-gray-700 uppercase tracking-wider">Actions</th>
+            <table className="w-full">
+              <thead className="bg-gradient-to-r from-lightblue/20 to-darkblue/20">
+                <tr>
+                  <th className="px-3 py-2 text-left text-xs font-semibold text-darkblue uppercase tracking-wider">Source</th>
+                  <th className="px-3 py-2 text-left text-xs font-semibold text-darkblue uppercase tracking-wider">Destination</th>
+                  <th className="px-3 py-2 text-left text-xs font-semibold text-darkblue uppercase tracking-wider">Distance</th>
+                  <th className="px-3 py-2 text-left text-xs font-semibold text-darkblue uppercase tracking-wider">Weight</th>
+                  <th className="px-3 py-2 text-left text-xs font-semibold text-darkblue uppercase tracking-wider">Date</th>
+                  <th className="px-3 py-2 text-left text-xs font-semibold text-darkblue uppercase tracking-wider">Material</th>
+                  <th className="px-3 py-2 text-left text-xs font-semibold text-darkblue uppercase tracking-wider">Truck Type</th>
+                  <th className="px-3 py-2 text-left text-xs font-semibold text-darkblue uppercase tracking-wider">Posted By</th>
+                  <th className="px-3 py-2 text-left text-xs font-semibold text-darkblue uppercase tracking-wider">Actions</th>
                 </tr>
               </thead>
-              <tbody className="bg-white divide-y divide-gray-200">
+              <tbody className="bg-white">
                 {recentLoads.map((load) => (
-                  <tr key={load.id} className="hover:bg-blue-50 transition-colors duration-200 border-b border-gray-100">
-                    <td className="px-6 py-3 whitespace-nowrap text-xs font-medium text-gray-900 border-r border-gray-100">{load.sourceCity}</td>
-                    <td className="px-6 py-3 whitespace-nowrap text-xs text-gray-900 border-r border-gray-100">{load.destinationCity}</td>
-                    <td className="px-6 py-3 whitespace-nowrap text-xs text-gray-600 border-r border-gray-100">{load.distance}</td>
-                    <td className="px-6 py-3 whitespace-nowrap text-xs text-gray-600 border-r border-gray-100">{load.weight}</td>
-                    <td className="px-6 py-3 whitespace-nowrap text-xs text-gray-600 border-r border-gray-100">{load.scheduledDate}</td>
-                    <td className="px-6 py-3 whitespace-nowrap text-xs text-gray-600 border-r border-gray-100">{load.material}</td>
-                    <td className="px-6 py-3 whitespace-nowrap text-xs text-gray-600 border-r border-gray-100">{load.truckType}</td>
-                    <td className="px-6 py-3 whitespace-nowrap text-xs text-gray-600 border-r border-gray-100">{load.postedBy}</td>
-                    <td className="px-6 py-3 whitespace-nowrap text-xs font-medium">
-                      <div className="flex space-x-2">
-                        <button className="bg-lightblue hover:bg-darkblue text-white px-2 py-1 rounded-md text-xs font-medium transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 border border-white/20 relative overflow-hidden group">
-                          <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-                          <div className="relative z-10">View Contact</div>
+                  <tr key={load.id} className="hover:bg-lightblue/5 transition-colors duration-200 border-b border-gray-100">
+                    <td className="px-3 py-2 whitespace-nowrap text-xs font-medium text-gray-900">{load.sourceCity}</td>
+                    <td className="px-3 py-2 whitespace-nowrap text-xs text-gray-900">{load.destinationCity}</td>
+                    <td className="px-3 py-2 whitespace-nowrap text-xs text-gray-600">{load.distance}</td>
+                    <td className="px-3 py-2 whitespace-nowrap text-xs text-gray-600">{load.weight}</td>
+                    <td className="px-3 py-2 whitespace-nowrap text-xs text-gray-600">{load.scheduledDate}</td>
+                    <td className="px-3 py-2 whitespace-nowrap text-xs text-gray-600">{load.material}</td>
+                    <td className="px-3 py-2 whitespace-nowrap text-xs text-gray-600">{load.truckType}</td>
+                    <td className="px-3 py-2 whitespace-nowrap text-xs text-gray-600">{load.postedBy}</td>
+                    <td className="px-3 py-2 whitespace-nowrap text-xs font-medium">
+                      <div className="flex space-x-1">
+                        <button className="bg-lightblue hover:bg-darkblue text-white px-2 py-1 rounded text-xs font-medium transition-colors duration-200">
+                          Contact
                         </button>
-                        <button className="bg-darkpink hover:bg-pink-600 text-white px-2 py-1 rounded-md text-xs font-medium transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 border border-white/20 relative overflow-hidden group">
-                          <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-                          <div className="relative z-10">Quote Now</div>
+                        <button className="bg-lightblue hover:bg-darkblue text-white px-2 py-1 rounded text-xs font-medium transition-colors duration-200">
+                          Quote
                         </button>
                       </div>
                     </td>

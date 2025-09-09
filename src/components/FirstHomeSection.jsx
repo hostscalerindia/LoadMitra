@@ -26,6 +26,8 @@ const FirstHomeSection = () => {
     scheduledDate: ''
   })
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [touchStart, setTouchStart] = useState(null)
+  const [touchEnd, setTouchEnd] = useState(null)
   
   // Carousel images array with corresponding text - Easy to add more images here
   const carouselData = [
@@ -74,6 +76,30 @@ const FirstHomeSection = () => {
     setCurrentSlide(currentSlide === carouselData.length - 1 ? 0 : currentSlide + 1)
   }
 
+  // Touch handlers for mobile swipe
+  const handleTouchStart = (e) => {
+    setTouchEnd(null)
+    setTouchStart(e.targetTouches[0].clientX)
+  }
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX)
+  }
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return
+    
+    const distance = touchStart - touchEnd
+    const isLeftSwipe = distance > 50
+    const isRightSwipe = distance < -50
+
+    if (isLeftSwipe) {
+      goToNext()
+    } else if (isRightSwipe) {
+      goToPrevious()
+    }
+  }
+
   const handleInputChange = (field, value) => {
     setFormData(prev => ({
       ...prev,
@@ -106,42 +132,74 @@ const FirstHomeSection = () => {
   }
 
   return (
-    <div className="relative min-h-screen bg-white pt-16 sm:pt-20">
+    <div className="relative bg-white h-[95vh] overflow-hidden">
       {/* Carousel Background */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="relative w-full h-full">
+        <div 
+          className="relative w-full h-full min-h-[400px] sm:min-h-[500px] md:min-h-[600px] cursor-grab active:cursor-grabbing"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
           {/* Carousel Images */}
           {carouselData.map((item, index) => (
             <div
               key={index}
-              className={`absolute inset-0 transition-all duration-1000 ${
-                index === currentSlide ? 'opacity-100 scale-100' : 'opacity-0 scale-110'
+              className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
+                index === currentSlide ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
               }`}
             >
               <img
                 src={item.image}
                 alt={`Carousel slide ${index + 1}`}
-                className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
+                className="w-full h-full object-cover object-center transition-transform duration-1000 ease-in-out hover:scale-105 sm:hover:scale-110"
+                style={{
+                  objectPosition: 'center center'
+                }}
+                loading="lazy"
               />
             </div>
           ))}
           
-          {/* Overlay */}
-          <div className="absolute inset-0 bg-black/10"></div>
+          {/* Responsive Overlay */}
+          <div className="absolute inset-0 bg-black/5 sm:bg-black/10 md:bg-black/15"></div>
           
-          {/* White Gradient Overlay from Top */}
-          <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-white/10 to-transparent"></div>
+          {/* Responsive Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-white/5 to-transparent sm:from-white/20 sm:via-white/10 sm:to-transparent md:from-white/25 md:via-white/15 md:to-transparent"></div>
           
+          {/* Mobile-specific overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent sm:hidden"></div>
+          
+          {/* Navigation Arrows - Hidden on mobile, visible on larger screens */}
+          <button
+            onClick={goToPrevious}
+            className="hidden md:flex absolute left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full items-center justify-center transition-all duration-300 hover:scale-110 border border-white/30 z-20"
+            aria-label="Previous slide"
+          >
+            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          
+          <button
+            onClick={goToNext}
+            className="hidden md:flex absolute right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full items-center justify-center transition-all duration-300 hover:scale-110 border border-white/30 z-20"
+            aria-label="Next slide"
+          >
+            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
           
           {/* Dots Indicator */}
-          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+          <div className="absolute bottom-3 sm:bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 sm:space-x-3 z-20">
             {carouselData.map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
                   index === currentSlide 
-                    ? 'bg-white' 
+                    ? 'bg-white shadow-lg' 
                     : 'bg-white/50 hover:bg-white/75'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
@@ -151,11 +209,11 @@ const FirstHomeSection = () => {
         </div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 sm:pb-12 lg:pb-16">
-        <div className="flex flex-col xl:flex-row gap-8 lg:gap-12">
+      <div className="relative z-10 h-full max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 flex items-center">
+        <div className="flex flex-col lg:flex-row lg:gap-8 xl:gap-12 w-full m">
           {/* Left side - dynamic text */}
-          <div className="order-1 xl:order-1 mt-20 px-4 xl:mt-0 xl:px-0 xl:w-3/5">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-relaxed text-center xl:text-left mt-10" style={{color: 'white', textShadow: '2px 2px 8px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.5)', lineHeight: '55px'}}>
+          <div className="order-1 lg:order-1 w-full lg:w-1/2 flex items-center justify-center lg:justify-start px-2 sm:px-4 mt-20 sm:mt-15">
+            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight text-center lg:text-left max-w-lg lg:max-w-xl" style={{color: 'white', textShadow: '2px 2px 8px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.5)', lineHeight: '1.2'}}>
               {carouselData[currentSlide].text.split(carouselData[currentSlide].highlight).map((part, index) => (
                 <span key={index}>
                   {part}
@@ -170,27 +228,27 @@ const FirstHomeSection = () => {
             </div>
             
           {/* Right side - form */}
-          <div className="order-2 xl:order-2 space-y-6 sm:space-y-8 w-full xl:w-2/5">
+          <div className="order-2 lg:order-2 w-full lg:w-1/2 flex items-center justify-center lg:justify-end px-2 sm:px-4">
             
-            <div className="bg-white/95 mt-[25px] backdrop-blur-sm rounded-2xl p-4 sm:p-5 shadow-xl border border-white/30 w-full">
+            <div className="bg-white/95 mt-10 backdrop-blur-sm rounded-xl p-3 sm:p-4 shadow-lg border border-white/30 w-full max-w-sm sm:max-w-md">
               {/* Form Header */}
-              <div className="mb-4 text-center">
-                <h1 className="text-xl sm:text-2xl font-bold text-darkblue mb-2">
+              <div className="mb-2 sm:mb-3 text-center">
+                <h1 className="text-sm sm:text-base md:text-lg font-bold text-darkblue">
                   Post Your <span className="text-lightblue">Load Details</span>
                 </h1>
               </div>
-              <div className="mb-4">
-                <label className="block text-xs font-medium text-gray-700 mb-2">
+              <div className="mb-2 sm:mb-3">
+                <label className="block text-xs font-medium text-gray-700 mb-1">
                   Load Type <span className="text-red-500">*</span>
                 </label>
-                <div className="flex flex-col sm:flex-row bg-gray-100 rounded-lg p-1 space-y-1 sm:space-y-0 sm:gap-2">
+                <div className="flex flex-col sm:flex-row bg-gray-200 rounded-lg p-1 space-y-1 sm:space-y-0 sm:gap-1">
                   <button
                     type="button"
                     onClick={() => setLoadType('full-load')}
-                    className={`flex-1 py-1.5 px-2 rounded-md text-xs font-medium transition-all ${
+                    className={`flex-1 py-1.5 px-3 rounded-md text-xs font-semibold transition-all duration-300 ${
                       loadType === 'full-load'
-                        ? 'bg-blue-600 text-white shadow-sm'
-                        : 'text-gray-600 hover:text-gray-900'
+                        ? 'bg-blue-600 text-white shadow-lg transform scale-105'
+                        : 'text-gray-700 hover:text-gray-900 hover:bg-gray-300'
                     }`}
                   >
                     Full Load (Above 3MT)
@@ -198,10 +256,10 @@ const FirstHomeSection = () => {
                   <button
                     type="button"
                     onClick={() => setLoadType('part-load')}
-                    className={`flex-1 py-1.5 px-2 rounded-md text-xs font-medium transition-all ${
+                    className={`flex-1 py-1.5 px-3 rounded-md text-xs font-semibold transition-all duration-300 ${
                       loadType === 'part-load'
-                        ? 'bg-blue-600 text-white shadow-sm'
-                        : 'text-gray-600 hover:text-gray-900'
+                        ? 'bg-blue-600 text-white shadow-lg transform scale-105'
+                        : 'text-gray-700 hover:text-gray-900 hover:bg-gray-300'
                     }`}
                   >
                     Part Load (Below 3MT)
@@ -209,10 +267,10 @@ const FirstHomeSection = () => {
                 </div>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-3">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-2">
+              <form onSubmit={handleSubmit} className="space-y-1.5 sm:space-y-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 sm:gap-2">
                   <div>
-                    <label className="block text-xs font-medium text-gray-700 mb-1">
+                    <label className="block text-xs font-medium text-gray-700 mb-0.5">
                       From <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -220,12 +278,12 @@ const FirstHomeSection = () => {
                       value={formData.from}
                       onChange={(e) => handleInputChange('from', e.target.value)}
                       placeholder="Source City"
-                      className="w-full px-2 py-1.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-xs"
+                      className="w-full px-2 py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent text-xs"
                       required
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-medium text-gray-700 mb-1">
+                    <label className="block text-xs font-medium text-gray-700 mb-0.5">
                       To <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -233,22 +291,21 @@ const FirstHomeSection = () => {
                       value={formData.to}
                       onChange={(e) => handleInputChange('to', e.target.value)}
                       placeholder="Destination City"
-                      className="w-full px-2 py-1.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-xs"
+                      className="w-full px-2 py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent text-xs"
                       required
                     />
                   </div>
                 </div>
 
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 sm:gap-2">
                   <div>
-                    <label className="block text-xs font-medium text-gray-700 mb-1">
+                    <label className="block text-xs font-medium text-gray-700 mb-0.5">
                       Pick up Type <span className="text-red-500">*</span>
                     </label>
                     <select
                       value={formData.pickupType}
                       onChange={(e) => handleInputChange('pickupType', e.target.value)}
-                      className="w-full px-3 py-2 sm:px-2 sm:py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                      className="w-full px-2 py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent text-xs"
                       required
                     >
                       <option value="">Select</option>
@@ -259,13 +316,13 @@ const FirstHomeSection = () => {
                     </select>
                   </div>
                   <div>
-                    <label className="block text-xs font-medium text-gray-700 mb-1">
+                    <label className="block text-xs font-medium text-gray-700 mb-0.5">
                       Material <span className="text-red-500">*</span>
                     </label>
                     <select
                       value={formData.material}
                       onChange={(e) => handleInputChange('material', e.target.value)}
-                      className="w-full px-3 py-2 sm:px-2 sm:py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                      className="w-full px-2 py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent text-xs"
                       required
                     >
                       <option value="">Select</option>
@@ -278,15 +335,15 @@ const FirstHomeSection = () => {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 sm:gap-2">
                   <div>
-                    <label className="block text-xs font-medium text-gray-700 mb-1">
+                    <label className="block text-xs font-medium text-gray-700 mb-0.5">
                       Weight (MT) <span className="text-red-500">*</span>
                     </label>
                     <select
                       value={formData.weight}
                       onChange={(e) => handleInputChange('weight', e.target.value)}
-                      className="w-full px-3 py-2 sm:px-2 sm:py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                      className="w-full px-2 py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent text-xs"
                       required
                     >
                       <option value="">Select</option>
@@ -307,13 +364,13 @@ const FirstHomeSection = () => {
                     </select>
                   </div>
                   <div>
-                    <label className="block text-xs font-medium text-gray-700 mb-1">
+                    <label className="block text-xs font-medium text-gray-700 mb-0.5">
                       Truck Type <span className="text-red-500">*</span>
                     </label>
                     <select
                       value={formData.truckType}
                       onChange={(e) => handleInputChange('truckType', e.target.value)}
-                      className="w-full px-3 py-2 sm:px-2 sm:py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                      className="w-full px-2 py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent text-xs"
                       required
                     >
                       <option value="">Select</option>
@@ -325,15 +382,15 @@ const FirstHomeSection = () => {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 sm:gap-2">
                   <div>
-                    <label className="block text-xs font-medium text-gray-700 mb-1">
+                    <label className="block text-xs font-medium text-gray-700 mb-0.5">
                       No. of Trucks <span className="text-red-500">*</span>
                     </label>
                     <select
                       value={formData.numTrucks}
                       onChange={(e) => handleInputChange('numTrucks', e.target.value)}
-                      className="w-full px-3 py-2 sm:px-2 sm:py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                      className="w-full px-2 py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent text-xs"
                       required
                     >
                       <option value="">Select</option>
@@ -345,27 +402,27 @@ const FirstHomeSection = () => {
                     </select>
                   </div>
                   <div>
-                    <label className="block text-xs font-medium text-gray-700 mb-1">
+                    <label className="block text-xs font-medium text-gray-700 mb-0.5">
                       Scheduled Date <span className="text-red-500">*</span>
                     </label>
                       <input
                         type="date"
                         value={formData.scheduledDate}
                         onChange={(e) => handleInputChange('scheduledDate', e.target.value)}
-                      className="w-full px-3 py-2 sm:px-2 sm:py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                      className="w-full px-2 py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent text-xs"
                         required
                       />
                   </div>
                 </div>
 
-                <div className="pt-3 flex justify-center">
+                <div className="pt-1.5 flex justify-center">
                   <button
                     type="submit"
-                    className="w-full sm:w-auto bg-lightblue hover:bg-darkblue text-white font-semibold py-3 px-6 sm:py-2 sm:px-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 border border-white/20 text-sm relative overflow-hidden group"
+                    className="bg-lightblue hover:bg-darkblue text-white font-medium py-1.5 px-3 rounded-md shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 hover:-translate-y-0.5 border border-white/20 text-xs relative overflow-hidden group"
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-                    <div className="flex items-center justify-center space-x-2 relative z-10">
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="flex items-center space-x-1 relative z-10">
+                      <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                       <span>Submit</span>

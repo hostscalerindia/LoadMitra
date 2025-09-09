@@ -49,7 +49,7 @@ const About = () => {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="group relative rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border-2 border-transparent hover:border-lightblue "
+                className="group relative rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border-2 border-gray-200 hover:border-lightblue "
               >
                 {/* Gradient Background on hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-lightblue/20 to-darkblue/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

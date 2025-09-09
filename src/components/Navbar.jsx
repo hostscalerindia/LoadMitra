@@ -102,28 +102,24 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center">
-            <Link to="/" className="flex items-center cursor-pointer" onClick={closeMobileMenu}>
-              <div className="flex items-center space-x-3">
-                <img 
-                  src={cutlogo} 
-                  alt="LoadMitra Logo" 
-                  className="hidden sm:block absolute h-8 w-12 sm:h-10 sm:w-14 lg:h-12 lg:w-16"
-                  style={{
-                    left: '30px',
-                    top: '10px',
-                    textShadow: '2px 2px 6px rgba(255,255,255,0.9), 0 0 15px rgba(255,255,255,0.7), 0 0 25px rgba(96, 165, 250, 0.3)'
-                  }}
-                />
-                <div className="relative">
-                  <h1 className="absolute text-sm sm:text-xl lg:text-1xl font-bold left-[25px] top-[-10px] sm:left-[15px] sm:top-0" style={{
-                    color: 'black',
-                    textShadow: '2px 2px 6px rgba(255,255,255,0.9), 0 0 15px rgba(255,255,255,0.7), 0 0 25px rgba(96, 165, 250, 0.3)'
-                  }}>
-                    LOAD<span style={{color: '#60A5FA', textShadow: '2px 2px 6px rgba(255,255,255,0.9), 0 0 15px rgba(255,255,255,0.7), 0 0 25px rgba(96, 165, 250, 0.5)'}}>MITRA</span>
-                  </h1>
-                </div>
-              </div>
-            </Link>
+             <Link to="/" className="flex items-center cursor-pointer" onClick={closeMobileMenu}>
+               <div className="relative">
+                 <img 
+                   src={cutlogo} 
+                   alt="LoadMitra Logo" 
+                   className="h-8 w-12 sm:h-10 sm:w-14 lg:h-12 lg:w-16 object-contain"
+                 />
+                 <h1 className="absolute text-xs sm:text-sm lg:text-base font-bold" style={{
+                   color: 'black',
+                   top: '50%',
+                   left: '50%',
+                   transform: 'translate(-4%, 25%)',
+                   textShadow: '2px 2px 6px rgba(255,255,255,0.9), 0 0 15px rgba(255,255,255,0.7), 0 0 25px rgba(96, 165, 250, 0.3)'
+                 }}>
+                   LOAD<span style={{color: '#60A5FA', textShadow: '2px 2px 6px rgba(255,255,255,0.9), 0 0 15px rgba(255,255,255,0.7), 0 0 25px rgba(96, 165, 250, 0.5)'}}>MITRA</span>
+                 </h1>
+               </div>
+             </Link>
           </div>
 
           <div className="hidden lg:flex items-center space-x-2">

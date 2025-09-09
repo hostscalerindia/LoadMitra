@@ -27,7 +27,7 @@ const HeroMobile = () => {
       
       {/* Content Overlay */}
       <div className="relative z-10 h-full flex items-center">
-        <div className="max-w-7xl mx-auto px-2 py-1 w-full">
+        <div className="max-w-7xl mx-auto px-2 py-1 w-full mt-[50px]">
           
           {/* Text Content - Ultra Compact Mobile */}
           <div className="max-w-2xl space-y-1 text-white">

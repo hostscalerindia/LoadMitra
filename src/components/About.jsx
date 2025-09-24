@@ -81,7 +81,7 @@ const About = () => {
             </h2>
 
             <p className="text-para text-gray-700 leading-relaxed">
-              RoadMitra is India's premier logistics platform that bridges the gap between
+              LoadMitra is India's premier logistics platform that bridges the gap between
               shippers and transporters. We've built a comprehensive ecosystem that ensures
               seamless cargo movement across the country.
             </p>
